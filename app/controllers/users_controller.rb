@@ -26,8 +26,18 @@ class UsersController < ApplicationController
   def add_pdf
   	@user = User.find(params[:user_id])
     @user.astro_pdfs.create(avatar: params[:file])
+    
+    
+
     redirect_to users_url
+    flash[:notice] = "The request from the user Astrology File Uploaded Successfully for #{@user.email}"
+    
+    
   end
+
+
+
+
 
  
 end

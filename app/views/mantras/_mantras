@@ -1,0 +1,171 @@
+
+
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <!-- <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#sunday" aria-expanded="true" aria-controls="sunday">
+                  Sunday Mantras
+                </a>
+              </h4>
+            </div>
+            <div id="sunday" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+
+
+              </div>
+            </div>
+          </div> -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#monday" aria-expanded="false" aria-controls="monday">
+                  Monday Mantras
+                </a>
+              </h4>
+            </div>
+            <div id="monday" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="list-group">
+
+                <%= link_to 'Lingashtakam In Telugu', asset_path('fwdmondaymantras/lingashtakam-in-telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Shiva Bhujangam In Telugu', asset_path('fwdmondaymantras/Shiva-bhujangam-in- telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Shiva Panchakshara Stotram In Telugu', asset_path('fwdmondaymantras/Shiva-panchakshara -stotram-in-telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sivashtakam In Telugu', asset_path('fwdmondaymantras/Sivashtakam-in-telugu.pdf'), target: "_blank", class: "list-group-item" %>
+
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#tuesday" aria-expanded="false" aria-controls="tuesday">
+                  Tuesday Mantras
+                </a>
+              </h4>
+            </div>
+            <div id="tuesday" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="list-group">
+                <%= link_to 'Ganesha Bhujangam in telugu', asset_path('fwdtuesdaymantras/Ganesha Bhujangam in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Hanuman chalisa in telugu', asset_path('fwdtuesdaymantras/Hanuman chalisa in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Angaraka ashtottara satanamavali in telugu', asset_path('fwdtuesdaymantras/Sri Angaraka ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>                
+                <%= link_to 'Sri Ketu ashtottara satanamavali in telugu', asset_path('fwdtuesdaymantras/Sri Ketu ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Subrahmanya ashtottara satanamavali in telugu', asset_path('fwdtuesdaymantras/Sri Subrahmanya ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Subrahmanya Bhujangam in telugu', asset_path('fwdtuesdaymantras/Subrahmanya Bhujangam in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Subrahmanya Pancharatnam in telugu', asset_path('fwdtuesdaymantras/Subrahmanya Pancharatnam in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#wednesday" aria-expanded="false" aria-controls="wednesday">
+                  Wednesday Mantras
+                </a>
+              </h4>
+            </div>
+            <div id="wednesday" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="list-group">
+                <%= link_to 'Dakshinamurthy ashtakam in telugu', asset_path('fwdwednesdaymantras/Dakshinamurthy ashtakam in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Dakshinamurthy stotram in telugu', asset_path('fwdwednesdaymantras/Dakshinamurthy stotram in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Maha mrityunjaya stotram in telugu', asset_path('fwdwednesdaymantras/Maha mrityunjaya stotram in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Budha ashtottara satanamavali in telugu', asset_path('fwdwednesdaymantras/Sri Budha ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Lalitha ashtottara satanamavali in telugu', asset_path('fwdwednesdaymantras/Sri Lalitha ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Vishnu Sahasranama Stotram', asset_path('fwdwednesdaymantras/Sri Vishnu Sahasranama Stotram.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Vishnu Bhujanga prayata stotram in telugu', asset_path('fwdwednesdaymantras/Vishnu Bhujanga prayata stotram in telugu.pdf'), target: "_blank", class: "list-group-item" %>               
+              </div>
+            </div>
+          </div>
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#thursday" aria-expanded="false" aria-controls="thursday">
+                  Thursday Mantras
+                </a>
+              </h4>
+            </div>
+            <div id="thursday" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="list-group">
+                <%= link_to 'Dakshinamurthy stotram in telugu', asset_path('fwdthursday/Dakshinamurthy stotram in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Guru Stotram in telugu', asset_path('fwdthursday/Guru Stotram in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Guru ashtottara satanamavali in telugu', asset_path('fwdthursday/Sri Guru ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#friday" aria-expanded="false" aria-controls="friday">
+                  Friday Mantras
+                </a>
+              </h4>
+            </div>
+            <div id="friday" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="list-group">
+                <%= link_to 'friday-navadurga-stotram-in-telugu', asset_path('fwdfriday/friday-navadurga-stotram-in-telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Navagraha stotram in telugu', asset_path('fwdfriday/Navagraha stotram in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sree Durga ashtottara satanama stotram in telugu', asset_path('fwdfriday/Sree Durga ashtottara satanama stotram in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Lakshmi ashtottara satanamavali in telugu', asset_path('fwdfriday/Sri Lakshmi ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Sukra ashtottara satanamavali in telugu', asset_path('fwdfriday/Sri Sukra ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#saturday" aria-expanded="false" aria-controls="saturday">
+                  Saturday Mantras
+                </a>
+              </h4>
+            </div>
+            <div id="saturday" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="list-group">
+                <%= link_to 'Kalabhairavashtakam in telugu', asset_path('fwdsaturday/Kalabhairavashtakam in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Maha mrityunjaya stotram in telugu', asset_path('fwdsaturday/Maha mrityunjaya stotram in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Sani ashtottara satanamavali in telugu', asset_path('fwdsaturday/Sri Sani ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#sungrahamantras" aria-expanded="true" aria-controls="sungrahamantras">
+                  Sungraha Mantras
+                </a>
+              </h4>
+            </div>
+            <div id="sungrahamantras" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+                <%= link_to 'Aditya Hrudayam in telugu', asset_path('fwdsungrahamantras/Aditya Hrudayam in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Sri Surya ashtottara satanamavali in telugu', asset_path('fwdsungrahamantras/Sri Surya ashtottara satanamavali in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Surya Ashtakam in telugu', asset_path('fwdsungrahamantras/Surya Ashtakam in telugu.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'surya_namaskar_mantras', asset_path('fwdsungrahamantras/surya_namaskar_mantras.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'surya-namaskar-sun-salutation-poses-asanas-and-breathing', asset_path('fwdsungrahamantras/surya-namaskar-sun-salutation-poses-asanas-and-breathing.pdf'), target: "_blank", class: "list-group-item" %>
+
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#mantrasinword" aria-expanded="true" aria-controls="mantrasinword">
+                  Mantras In Word
+                </a>
+              </h4>
+            </div>
+            <div id="mantrasinword" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="list-group">
+                <%= link_to 'Mantras', asset_path('fwdmantrasinword/Mantras.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'SARADA MANTRAM', asset_path('fwdmantrasinword/SARADA MANTRAM.pdf'), target: "_blank", class: "list-group-item" %>
+                <%= link_to 'Stones Mantras', asset_path('fwdmantrasinword/Stones Mantras.pdf'), target: "_blank", class: "list-group-item" %>
+              </div>
+            </div>
+          </div>
+        </div>

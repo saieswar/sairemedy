@@ -1,0 +1,335 @@
+<div class="row text-center">
+  <div class="col-sm-4"><h4>FREEUSER COUNT: <span class="label label-info"><%= @references_count || 0 %></span></h4></div>
+  <div class="col-sm-4"><h4>LIFEMEMBERSHIP</h4></div>
+</div>
+<div class="row">
+  <div class="col-sm-4 profile">
+    <ul class="list-group">
+      <% if current_user.avatar.present? %>
+      <%= image_tag current_user.avatar_url, class: "img-responsive" %>
+      <% elsif current_user.gender %>
+      <%= image_tag "profile-2.jpg", class: "img-responsive" %>
+      <% else %>
+      <%= image_tag "profile-1.jpg", class: "img-responsive" %>
+      <%end %>
+
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-xs-12"><%= current_user.name %></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-4 text-center">
+    <%= image_tag "logo.jpg", size: '150x150'%>
+
+  </div>
+  <div class="col-sm-4 text-left">
+
+    <%= image_tag "circle.png", size: '200x200', class: "rotate-image"%>
+
+
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-3">
+    <ul class="ch-grid">
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Numerology</h3>
+            <p>Caption <%= link_to "Go", numerologys_path %></p>
+          </div>
+          <div class="ch-thumb ch-img-1"></div>
+        </div>
+      </li>
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Astrology</h3>
+            <p>Caption <%= link_to "Go", astrologies_path %></p>
+          </div>
+          <div class="ch-thumb ch-img-2"></div>
+        </div>
+      </li>
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Baby Names</h3>
+            <p>Caption <a href="#" data-toggle="modal" data-target="#babynames">Read more</a></p>
+          </div>
+          <div class="ch-thumb ch-img-3"></div>
+        </div>
+      </li>
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Products</h3>
+            <p>Caption <a href="#" data-toggle="modal" data-target="#products">Read more</a></p>
+          </div>
+          <div class="ch-thumb ch-img-4"></div>
+        </div>
+      </li>
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Vastu</h3>
+            <p>Caption <a href="#" data-toggle="modal" data-target="#vastu">Read more</a></p>
+          </div>
+          <div class="ch-thumb ch-img-5"></div>
+        </div>
+      </li>
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Matrimony</h3>
+            <p>Caption <%= link_to "Go", matrimony_index_path %></p>
+          </div>
+          <div class="ch-thumb ch-img-6"></div>
+        </div>
+      </li>
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Mantras</h3>
+            <p>Caption <%= link_to "Go", mantras_path %></p>
+            <!-- <p>Caption <a href="#" data-toggle="modal" data-target="#mantras">Mantras</a></p> -->
+          </div>
+          <div class="ch-thumb ch-img-7"></div>
+        </div>
+      </li>
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Remedies</h3>
+            <p>Caption <a href="#" data-toggle="modal" data-target="#remedies">Read more</a></p>
+          </div>
+          <div class="ch-thumb ch-img-8"></div>
+        </div>
+      </li>
+      <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+        <div class="ch-item">
+          <div class="ch-info">
+            <h3>Pandit</h3>
+            <p>Caption <%= link_to "Go", pandits_path %></p>
+          </div>
+          <div class="ch-thumb ch-img-9"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#offer" aria-controls="offer" role="tab" data-toggle="tab">My Pandits</a></li>
+      <li role="presentation"><a href="#inbox" aria-controls="inbox" role="tab" data-toggle="tab">Inbox</a></li>
+      <li role="presentation"><a href="#outbox" aria-controls="outbox" role="tab" data-toggle="tab">Outbox</a></li>
+      <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Alert Messages</a></li>
+      <li role="presentation"><a href="#queries" aria-controls="queries" role="tab" data-toggle="tab">Queries</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="offer">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <% if @pandits.present? %>
+          <% @pandits.each_with_index do |pandit, index| %>
+
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading<%= index %>">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index%>" aria-expanded="true" aria-controls="collapse<%= index%>">
+                  <strong>Pandit Name: </strong> <%= pandit.pandit.user.name %>
+                </a>
+
+                 <span class="pull-right"><%= rating_for pandit.pandit.user, 'user',cancel: true,disable_after_rate: true %></span>
+              </h4>
+            </div>
+            <div id="collapse<%= index%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= index %>">
+              <div class="panel-body">
+               Email: <%= pandit.pandit.user.email %></br>
+               Phone: <%= pandit.pandit.user.phone %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="inbox">
+        <div class="panel-group" id="accordion" role="tablst" aria-multiselectable="true">
+
+          <% @offers.each_with_index do |offer, index| %>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading<%= index %>">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#inbox-collapse<%= index%>" aria-expanded="true" aria-controls="inbox-collapse<%= index%>">
+                  <strong>From:</strong> <%= offer.user.name%>
+
+                </a>
+              </h4>
+            </div>
+            <div id="inbox-collapse<%= index%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= index %>">
+              <div class="panel-body">
+                <%= offer.offer.description %>
+                <br><br>
+                <strong>Date:</strong> <%= offer.booking_date %><br>
+                <% if offer.offer.status == "Pending"%>
+
+                <%= link_to "Accept", offer_action_dashboard_path(offer.offer, :request_action => "Accepted"), method: :post, class: 'btn btn-success' %>
+
+                <%= link_to "Reject", offer_action_dashboard_path(offer.offer, :request_action => "Rejected"), method: :post, class: 'btn btn-danger' %>
+                <% else %>
+                <strong>Status:</strong> <%= offer.offer.status %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end if current_user.role == User::TYPE_PANDIT %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="outbox">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <% @sent_request.each_with_index do |sent_request, index| %>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#sent-collapse<%=index%>" aria-expanded="true" aria-controls="sent-collapse<%=index%>">
+                  <strong>To: </strong> <%= sent_request.pandit.user.name %>
+                </a>
+              </h4>
+            </div>
+            <div id="sent-collapse<%=index%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                <%= sent_request.offer.description %>
+                <br><br>
+                <strong>Status:</strong> <%= sent_request.offer.status %>
+              </div>
+            </div>
+          </div>
+          <%end %>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="messages">...</div>
+      <div role="tabpanel" class="tab-pane" id="queries">
+        <br>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Customer Name</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Customer Id</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Problem</label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <div class="col-md-3">
+
+   <ul class="list-group">
+    <li class="list-group-item active">
+      <div class="row">
+        <div class="col-xs-12">REFERENCE USERS: <%= @references_count || 0 %>/100</div>
+      </div>
+    </li>
+    <li class="list-group-item active">
+
+<%= imdb_style_rating_for  @current_user, current_user %>
+      <%= rating_for_user @current_user, @current_user,'user', star: 10 %>
+
+      <%= rating_for @current_user, 'user',cancel: true,disable_after_rate: true %>
+
+    </li>
+
+
+    <% @refered_users.each do |user| %>
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-xs-12"><%= user.name %></div>
+      </div>
+    </li>
+    <% end %>
+
+  </ul>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-sm-2">
+    <% unless @current_user.is_paid %>
+    <div class="indicate-box red"></div>
+    <% end %>
+
+    <% if @current_user.is_paid %>
+    <div class="indicate-box green"></div>
+    <% end %>
+  </div>
+  <div class="col-sm-10 text-center">
+    <div class="alert alert-info" role="alert">
+      <p class="notice">Birth Day wished Panel</p>
+    </div>
+  </div>
+
+</div>
+
+
+<style>
+  .indicate-box{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: inline-block;
+  }
+  .red{
+    background-color: red;
+  }
+  .yellow{
+    background-color: yellow;
+  }
+  .green{
+    background-color: green;
+  }
+</style>
+
+
+
+
+
+<div class="modal fade" id="mantras" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Mantras</h4>
+      </div>
+      <div class="modal-body">
+
+        <%= render 'mantras'%>
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

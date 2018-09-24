@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrapper">
+    <%= render 'shared/admin_menu' %>
+    <%= render 'shared/side_nav' %>
+    <div id="page-wrapper">
+      <div class="container-fluid">
+       <!--  <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p> -->
+        <%= yield %>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

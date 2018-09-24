@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saii Laharri</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>  
+  <%= csrf_meta_tags %>
+  
+  
+</head>
+<body id="gallexy-bg">
+
+ <div class="container" id="page-wrapper">    
+  		<!-- <div class="container-fluid head-note bg-red">
+  	    <div class="col-sm-6">
+  	      <p><kbd>Hello</kbd> this some note.</p>
+  	    </div>
+  	    <div class="col-sm-6 hidden-xs">
+  	      <ul class="list-inline pull-right circle-nav">
+  	        <li><a href="#"><i class="fa fa-user"></i></a></li>
+  	        <li><a href="#"><i class="fa fa-heart"></i></a></li>            
+  	      </ul>
+  	    </div>
+  	  </div> -->
+       <% %>
+
+      <%= render 'shared/main_menu' %>		
+      
+      
+      <div class="well ">
+        <% if notice.present?  %>
+        <div class="alert alert-success" role="alert"><p class="notice"><%= notice %></p></div>
+        <% end %>
+        <% if alert.present?  %>
+        <div class="alert alert-danger" role="alert"><p class="alert"><%= alert %></p></div> 
+        <% end %>
+        <%= yield %>
+      </div>
+      <div class="container-fluid head-note bg-red">
+        <div class="col-sm-6">
+          <p><kbd>Hello</kbd> this some note.</p>
+        </div>
+        <div class="col-sm-6 hidden-xs">
+          <ul class="list-inline pull-right circle-nav">
+            <li><a href="#"><i class="fa fa-user"></i></a></li>
+            <li><a href="#"><i class="fa fa-heart"></i></a></li>            
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    <audio controls autoplay="true" loop="infinite" id="audioplay">            
+      <source src="<%= asset_path('backgroud-music.mp3') %>" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+      <script>
+        $('#myCarousel').carousel({
+          interval: 4000
+        });
+
+        var clickEvent = false;
+        $('#myCarousel').on('click', '.nav a', function() {
+          clickEvent = true;
+          $('.nav li').removeClass('active');
+          $(this).parent().addClass('active');		
+        }).on('slide.bs.carousel', function(e) {
+          if(!clickEvent) {
+            var count = $('#nav-control').children().length -1;
+            var current = $('#nav-control li.active');
+            current.removeClass('active').next().addClass('active');
+            var id = parseInt(current.data('slide-to'));
+            if(count == id) {
+              $('#nav-control li').first().addClass('active');
+            }
+          }
+          clickEvent = false;
+        });
+      </script>
+
+      <script>
+        new WOW().init();
+      </script>
+    </body>
+    </html>

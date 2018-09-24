@@ -1,0 +1,171 @@
+<style type="text/css">
+  .panditimages {
+    width: 100%;
+    height: 100%;
+
+  }
+
+</style>
+
+<div >
+  <div class="row">
+    <dir class="col-sm-2 col-xs-2">
+
+      <div id="ticker">
+
+        <p>
+          <%= image_tag "logo.png", class: "panditimages img-responsive" %></br>
+        <%= image_tag "pandit1.jpg", class: "panditimages img-responsive" %></br>
+      <%= image_tag "pandit6.jpg", class: "panditimages img-responsive" %></br>
+
+    <%= image_tag "logo.png", class: "panditimages img-responsive" %></br>
+  <%= image_tag "pandit1.jpg", class: "panditimages img-responsive" %></br>
+<%= image_tag "pandit6.jpg", class: "panditimages img-responsive" %></br>
+</p>
+</div>
+<!--
+ 	    <%= image_tag "logo.png", class: "panditimages img-responsive" %></br>
+ 		<%= image_tag "pandit1.jpg", class: "panditimages img-responsive" %></br>
+ 		<%= image_tag "pandit6.jpg", class: "panditimages img-responsive" %></br> -->
+
+</dir>
+
+<dir class="col-sm-8 col-xs-10">
+
+<%= image_tag "pandit3.png", class: "panditimages img-responsive" %>
+<%= form_tag  pandits_path, :method => :get , class: "form-inline well-sm" do %>
+
+<div class="form-group">
+<!-- <%= select_tag "locations", raw("<option>Home</option><option selected='selected'>Work</option><option>Out</option>")%> -->
+<select name="type" class="form-control">
+<option value="">Select</option>
+<option value="Vedam Pandit">Vedam Certified Pandit</option>
+<option value="Consultancy Pandit">Consultancy Pandit</option>
+<option value="Vedam Pandit & Consultancy Pandit">Both Pandit</option>
+</select>
+</div>
+
+<div class="form-group">
+<label class="sr-only" for="exampleInputEmail3">State</label>
+<input type="text" class="form-control" name="state" id="state" placeholder="State">
+</div>
+<div class="form-group">
+<label class="sr-only" for="exampleInputPassword3">City</label>
+<input type="text" class="form-control" name="city" id="city" placeholder="City">
+</div>
+<input type="submit" name="commit" class="btn btn-primary" value="search" />
+
+<!-- <input type="submit" name="commit" class="btn btn-primary" value="send all" /> -->
+<!-- <button type="submit" name="commit" class="btn btn-primary">Search</button> -->
+
+<% end %>
+<br>
+<br>
+
+<!-- <button class="btn btn-primary btn-lg">Vedam Certified Pandit</button></br>
+   		<button class="btn btn-primary btn-lg">Consultancy Pandit</button></br>
+ 		<button class="btn btn-primary btn-lg">Both Pandit</button> -->
+
+<div class="row">
+<% @pandits.each do |pandit| %>
+<div class="col-md-4 col-sm-12 profile" id="my-profile">
+<div class="user-wrapper">
+<%= image_tag pandit.user.avatar.url || "profile-2.jpg", class: "img-responsive" %>
+<div class="description">
+  <h4>
+    Name:
+    <%= pandit.user[:name] %>
+  </h4>
+
+  <ul class="list-unstyled">
+    <li>
+      <strong>Deals:
+      </strong><%= pandit[:deals]%></li>
+      <li>
+        <strong>Experience:
+        </strong><%= pandit[:experience]%></li>
+    <li>
+      <strong>City:
+      </strong><%= pandit[:city]%></li>
+    <li>
+      <strong>State:
+      </strong><%= pandit[:state]%></li>
+  </ul>
+  <%= link_to "Profile", pandit_path(pandit), class: "btn btn-info btn-sm"%>
+  <!-- <%= link_to "Book Now", pandit_path(pandit), class: "btn btn-success btn-sm" %> -->
+</div>
+</div>
+</div>
+<% end %>
+
+</div>
+<!-- <%= will_paginate @pandits, renderer: BootstrapPagination::Rails  %> -->
+<%= will_paginate @pandits, renderer: BootstrapPagination::Rails %>
+</dir>
+
+<dir class="col-sm-2 hidden-xs">
+
+<div id="ticker">
+
+<p>
+<%= image_tag "pandit5.jpg", class: "panditimages img-responsive" %></br>
+
+<%= image_tag "pandit2.jpg", class: "panditimages img-responsive" %></br>
+<%= image_tag "pandit9.jpg", class: "panditimages img-responsive" %></br>
+<%= image_tag "pandit5.jpg", class: "panditimages img-responsive" %></br>
+
+<%= image_tag "pandit2.jpg", class: "panditimages img-responsive" %></br>
+<%= image_tag "pandit9.jpg", class: "panditimages img-responsive" %></br>
+</p>
+</div>
+
+<!--
+ 	    <%= image_tag "pandit5.jpg", class: "panditimages img-responsive" %></br>
+
+ 		<%= image_tag "pandit2.jpg", class: "panditimages img-responsive" %></br>
+ 		<%= image_tag "pandit9.jpg", class: "panditimages img-responsive" %></br> -->
+
+</dir>
+
+</div>
+</div>
+
+<style media="screen">
+
+#ticker {
+position: relative;
+overflow: hidden;
+width: 100%;
+height: 100%;
+text-align: center;
+border-top: 5px #999;
+border-bottom: 5px #999;
+}
+
+#ticker p {
+-moz-transition: opacity 0.5s ease-out;
+-o-transition: opacity 0.5s ease-out;
+-webkit-transition: opacity 0.5s ease-out;
+-ms-transition: opacity 0.5s ease-out;
+
+-webkit-animation: moveSlideshow 10s linear infinite;
+-moz-animation: moveSlideshow 10s linear infinite;
+}
+@-webkit-keyframes moveSlideshow {
+0% {
+margin-top: 0;
+}
+100% {
+margin-top: -750px;
+}
+}
+@-moz-keyframes moveSlideshow {
+0% {
+margin-top: 0;
+}
+100% {
+margin-top: -750px;
+}
+}
+
+</style>

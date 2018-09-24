@@ -1,0 +1,48 @@
+
+
+	<h2 class="page-header">Marriage Prediction</h2>
+<div class="row">
+	<div class="col-sm-6">
+		<div class="panel panel-primary black-panel">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Numerology</h3>
+		  </div>
+		  <div class="panel-body">		    		  	
+					<%= form_tag numerologys_get_fav_years_for_marriage_path , remote: true, method: :get do %>
+				  	<div class="form-group">
+						  <%= label_tag :name1, "Your Name" %><br />
+						  <%= text_field_tag :name1, "",autofocus: true, class: "form-control", placeholder: "Enter Name" %>
+						</div>
+
+						<div class="form-group">
+						  <%= label_tag :date_of_birth, "Your Date of Birth" %>
+						  <% born_on = Time.now %>
+						  <div class="form-control">
+						  	<%= select_date(born_on, prefix: :your_dob, order: [ :day,:month,:year], html_options: {class: "form-control"}, date_separator: '-',  prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, :start_year=>Date.today.year-100) %>	
+						  </div>			      
+						</div>
+
+						<div class="form-group">
+						  <%= label_tag :phone, "Enter Phone Number" %><br />
+						  <%= text_field_tag :phone, "", class: "form-control", placeholder: "Enter Name" %>
+						</div>
+
+						<div class="form-group">
+						 	<%= submit_tag "Get Result", class: "btn btn-success btn-block" %>
+						</div>
+
+				<%end%>
+		  </div>
+		</div>		
+	</div>
+	<div class="col-sm-6">
+		<div class="panel panel-success red-panel">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Result</h3>
+		  </div>
+		  <div class="panel-body" id="marriage">
+		    To get the result fill the form and submit.
+		  </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+
+
+
+
+<div class="row">
+   <div class="col-sm-3"></div>
+	<div class="col-sm-6">
+		<div class="panel panel-primary black-panel">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Upload Astrology PDF for <%= @user.name%></h3>
+		  </div>
+		  <div class="panel-body">		    		  	
+            <%= form_tag '/add_pdf', multipart: true do %>
+				  	<div class="form-group">
+						 <%= label_tag :file, "Upload" %><br />
+						 <%= file_field_tag "file" %>
+					</div>
+					<%= hidden_field_tag "user_id", @user.id %>
+				<%= submit_tag "save", class: "btn btn-success btn-block" %>
+			<% end %>
+
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-3"></div>
+</div>

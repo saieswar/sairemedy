@@ -1,0 +1,30 @@
+---
+pid: 12889
+config: !ruby/object:Puma::Configuration
+  cli_options: 
+  conf: 
+  options:
+    :min_threads: 1
+    :max_threads: 6
+    :quiet: true
+    :debug: false
+    :binds:
+    - unix:///home/deployer/appl/www/sample/shared/sockets/puma.sock
+    :workers: 2
+    :daemon: true
+    :mode: :http
+    :worker_timeout: 60
+    :worker_boot_timeout: 60
+    :worker_shutdown_timeout: 30
+    :remote_address: :socket
+    :config_file: config/puma.rb
+    :environment: production
+    :redirect_stdout: "/home/deployer/appl/www/sample/shared/log/puma.stdout.log"
+    :redirect_stderr: "/home/deployer/appl/www/sample/shared/log/puma.stderr.log"
+    :redirect_append: true
+    :pidfile: "/home/deployer/appl/www/sample/shared/pids/puma.pid"
+    :state: "/home/deployer/appl/www/sample/shared/pids/puma.state"
+    :control_url: unix:///tmp/puma-status-1455944864961-12884
+    :control_url_temp: "/tmp/puma-status-1455944864961-12884"
+    :control_auth_token: 2a6e8ec4a1be5752ddd80da6974f4a3
+    :tag: sample

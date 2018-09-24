@@ -1,0 +1,31 @@
+<div class="row">
+   <div class="col-sm-3"></div>
+	<div class="col-sm-6">
+		<div class="panel panel-primary black-panel">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Running time </h3>
+		  </div>
+		  <div class="panel-body">		    		  	
+            <%= form_tag astrologies_path , remote: true, method: :post do %>
+				  	<div class="form-group">
+						 <%= label_tag :name1, "First Sign" %><br />
+						 <%= select_tag :first_sign, options_for_select(Astrology::TIME), class: "form-control" %>
+					</div>
+					<div class="form-group">
+						  <%= label_tag :name1, "Second Sign" %><br />
+						 <%= select_tag :second_sign, options_for_select(Astrology::TIME), class: "form-control" %>
+					</div>
+				<%= submit_tag "Get Remedy", class: "btn btn-success btn-block" %>
+			<% end %>
+			<div id="astrology_remedies"></div>
+
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-3">
+	<b>Download Your life Sign</b></br>
+<% if current_user.astro_pdfs.present? %>
+<%= link_to "", current_user.astro_pdfs.last.avatar.url,target: :_blank, class: "fa fa-download"%>
+<% end %>
+	</div>
+</div>

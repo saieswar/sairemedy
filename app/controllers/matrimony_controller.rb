@@ -1,0 +1,5 @@
+class MatrimonyController < ApplicationController
+
+
+end
+

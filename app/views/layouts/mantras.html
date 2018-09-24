@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saii Laharri</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+</head>
+<body id="gallexy-bg">
+
+ <div class="container" id="page-wrapper">
+      <!-- <div class="container-fluid head-note bg-red">
+        <div class="col-sm-6">
+          <p><kbd>Hello</kbd> this some note.</p>
+        </div>
+        <div class="col-sm-6 hidden-xs">
+          <ul class="list-inline pull-right circle-nav">
+            <li><a href="#"><i class="fa fa-user"></i></a></li>
+            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+          </ul>
+        </div>
+      </div> -->
+      <%= render 'shared/main_menu' %>
+
+
+      <div class="well">
+        <% if notice.present?  %>
+        <div class="alert alert-success" role="alert"><p class="notice"><%= notice %></p></div>
+        <% end %>
+        <% if alert.present?  %>
+        <div class="alert alert-danger" role="alert"><p class="alert"><%= alert %></p></div>
+        <% end %>
+
+
+        <div class="row">
+          <div class="col-sm-3">
+            <ul class="list-group">
+              <% if current_user.avatar.present? %>
+              <%= image_tag current_user.avatar_url, class: "img-responsive" %>
+              <% elsif current_user.gender %>
+              <%= image_tag "profile-2.jpg", class: "img-responsive" %>
+              <% else %>
+              <%= image_tag "profile-1.jpg", class: "img-responsive" %>
+              <%end %>
+            </ul>
+          </div>
+          <div class="col-sm-6">
+            <div class="owl-carousel" id="owl-demo">
+              <div class="item"><%= image_tag "slide1.jpg"%></div>
+              <div class="item"><%= image_tag "slide2.jpg"%></div>
+              <div class="item"> <%= image_tag "slider1.jpg"%></div>
+              <div class="item"><%= image_tag "slider2.jpg"%></div>
+              <div class="item"><%= image_tag "image7.jpg"%></div>
+              <div class="item"><%= image_tag "image8.jpg"%></div>
+            </div>
+          </div>
+          <div class="col-sm-3 well">
+            <h4>CR REFER NO: <span class="label label-primary"><%= current_user.reference_no || 0%></span></h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-3">
+            <ul class="ch-grid">
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Numerology</h3>
+                    <p>Caption <%= link_to "Go", numerologys_path %></p>
+                  </div>
+                  <div class="ch-thumb ch-img-1"></div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Astrology</h3>
+                    <p>Caption <a href="#" data-toggle="modal" data-target="#astrology">Read more</a></p>
+                  </div>
+                  <div class="ch-thumb ch-img-2"></div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Baby Names</h3>
+                    <p>Caption <a href="#" data-toggle="modal" data-target="#babynames">Read more</a></p>
+                  </div>
+                  <div class="ch-thumb ch-img-3"></div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Products</h3>
+                    <p>Caption <a href="#" data-toggle="modal" data-target="#products">Read more</a></p>
+                  </div>
+                  <div class="ch-thumb ch-img-4"></div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Vastu</h3>
+                    <p>Caption <a href="#" data-toggle="modal" data-target="#vastu">Read more</a></p>
+                  </div>
+                  <div class="ch-thumb ch-img-5"></div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Matrimony</h3>
+                    <p>Caption <%= link_to "Go", matrimony_index_path %></p>
+                  </div>
+                  <div class="ch-thumb ch-img-6"></div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Mantras</h3>
+                    <p>Caption <%= link_to "Go", mantras_path %></p>
+                    <!-- <p>Caption <a href="#" data-toggle="modal" data-target="#mantras">Mantras</a></p> -->
+                  </div>
+                  <div class="ch-thumb ch-img-7"></div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Remedies</h3>
+                    <p>Caption <a href="#" data-toggle="modal" data-target="#remedies">Read more</a></p>
+                  </div>
+                  <div class="ch-thumb ch-img-8"></div>
+                </div>
+              </li>
+              <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">
+                <div class="ch-item">
+                  <div class="ch-info">
+                    <h3>Pandit</h3>
+                    <p>Caption <%= link_to "Go", pandits_path %></p>
+                  </div>
+                  <div class="ch-thumb ch-img-9"></div>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-sm-9"><%= yield %></div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <div class="alert alert-success" role="alert">
+              <p class="notice">Birth Day wished Panel</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="container-fluid head-note bg-red">
+        <div class="col-sm-6">
+          <p><kbd>Hello</kbd> this some note.</p>
+        </div>
+        <div class="col-sm-6 hidden-xs">
+          <ul class="list-inline pull-right circle-nav">
+            <li><a href="#"><i class="fa fa-user"></i></a></li>
+            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+    <audio controls autoplay loop id="audioplay">
+      <source src="<%= asset_path('backgroud-music.mp3') %>" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+
+      <script>
+        new WOW().init();
+        $(".owl-carousel").owlCarousel({
+          autoPlay: 3000, //Set AutoPlay to 3 seconds
+          items : 2,
+          itemsDesktop : [1199,3],
+          itemsDesktopSmall : [979,3]
+        });
+      </script>
+      <style>
+        #owl-demo .item{
+          margin: 3px;
+        }
+        #owl-demo .item img{
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      </style>
+    </body>
+    </html>

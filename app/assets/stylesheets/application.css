@@ -1,0 +1,149 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap-slider
+ *= require owl.carousel
+ *= require owl.theme
+ */
+
+ /* USER PROFILE STYLES */
+ .profile{
+  /*border: 1px solid #E0E0E0;*/
+}
+.user-wrapper .btn {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  margin: 5px;
+}
+
+.user-wrapper .description {
+  padding: 10px 10px;
+  background-color: #EEEEEE;
+}
+.user-wrapper img {
+  width:100%;
+}
+@media(max-width: 768px){
+  .description{
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+}
+
+.btn-social {
+  color: white;
+  opacity: 0.8;
+}
+
+.btn-social:hover {
+  color: white;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.btn-facebook {
+  background-color: #3b5998;
+}
+
+.btn-twitter {
+  background-color: #00aced;
+}
+
+.btn-linkedin {
+  background-color: #0e76a8;
+}
+
+.btn-google {
+  background-color: #c32f10;
+}
+
+
+.db-user-wrapper {
+  font-family: Verdana;
+  overflow-y: scroll;
+  height: 800px;
+
+}
+.media, .media .media {
+  margin-top: 5px;
+}
+.db-user-wrapper .media-list li {
+  padding: 5px 2px;
+  background-color: #FFFDE7;
+  color: #FFFFFF;
+  border: 5px solid #FFF9C4;
+}
+
+.db-user-wrapper .media-list li img {
+  width: 80px;
+  height: 80px;
+}
+
+.db-user-wrapper .media-list li a, .db-user-wrapper ul li a:hover {
+  color: #000;
+  background-color: transparent;
+}
+
+.db-user-wrapper .media-list .media-body {
+  padding-top: 5px;
+}
+
+.db-user-wrapper .media-list .media-body p {
+  padding-top: 0px;
+  color: #424242;
+  margin-bottom: 0px;
+}
+
+.db-user-wrapper .media-list .media-body .user-name {
+  color: #3B3B3C;
+  font-weight: 900;
+}
+
+.list-group{
+  margin-bottom: 0px;
+}
+.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;    
+}
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.63;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}

@@ -1,0 +1,93 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
+@media( min-width: 768px){
+  .box {
+
+    z-index: -10;
+    display: block;
+    position: absolute;
+    top: 0;
+    /*-ms-transform: skewY(-20deg);*/ /* IE 9 */
+    /*-webkit-transform: skewY(-20deg);*/ /* Safari */
+    /*transform: skewY(-20deg);*/ /* Standard syntax */
+  }
+  .anti-box{
+
+    z-index: -10;
+    display: block;
+    position: absolute;
+    top: 0;
+    /*-ms-transform: skewY(20deg);*/ /* IE 9 */
+    /*-webkit-transform: skewY(20deg);*/ /* Safari */
+    /*transform: skewY(20deg);*/ /* Standard syntax */
+  }
+}
+.box {
+  min-height: 100%;
+  width: 100%;
+  /*background: #f0e68c;*/
+  
+}
+.anti-box{
+  min-height: 100%;
+  width: 100%;
+  /*background: #f0e68c;*/
+  
+}
+.wrapper{
+ margin: 0px;
+ padding-right: 0px;
+ height: 100%;
+ z-index: 5;
+ position: relative;
+ top: 0;
+ background-color: #f0d645;
+}
+.bg-box{
+ margin: 0px;
+ padding-right: 0px;
+ height: 100%;
+ width: 100%;
+ position: absolute;
+ top: 0;
+ background-color: #f0d645;
+}    
+.white{
+ /*background-color: #ebe5d7;*/
+ 
+}
+.yellow{
+ /*background-color: #f0d645;*/
+}
+.red{
+ /*background-color: #cd3220;*/
+}
+.mydiv{
+ -ms-transform: skewY(20deg); /* IE 9 */
+ -webkit-transform: skewY(20deg); /* Safari */
+ transform: skewY(20deg); /* Standard syntax */
+}
+.logo{
+  position: absolute;
+  left: auto;
+  right: auto;
+  margin: 0 auto;
+  display: inline-block;
+}
+.carousel-inner.onebyone-carosel { margin: auto; width: 90%; }
+.onebyone-carosel .active.left { left: -33.33%; }
+.onebyone-carosel .active.right { left: 33.33%; }
+.onebyone-carosel .next { left: 33.33%; }
+.onebyone-carosel .prev { left: -33.33%; }
+
+
+
+#audioplay{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 8;
+}

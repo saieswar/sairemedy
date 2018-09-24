@@ -1,0 +1,40 @@
+<h1 class="page-header">Pandits</h1>
+<div class="row">
+	<% @pandits.each_with_index do |pandit, index| %>
+	<div class="col-sm-4 col-lg-4 col-md-4">
+		<div class="thumbnail">
+			<%= image_tag(pandit.user.avatar, size: "320x150", alt: "pandit.user.name", style: "height: 200px;") if pandit.user.avatar.present? %>
+			<%= image_tag("http://placehold.it/320x200", size: "320x150", alt: "pandit.user.name") unless pandit.user.avatar.present? %>
+			
+			<div class="caption">				
+				<h4><a href="#"><%= pandit.user.name.capitalize %></a></h4>
+				<hr>
+				<dl>
+					<dt>Working As:</dt>
+					<dd><%= pandit.deals %></dd>
+				</dl>
+				<dl>
+					<dt>Experience:</dt>
+					<dd><%= pandit.experience %></dd>
+				</dl>	
+				<dl>
+					<dt>Contact Number:</dt>
+					<dd><%= pandit.user.phone %></dd>
+				</dl>						
+				<hr>
+				<%= link_to "Show", pandit_path(pandit.id), class: 'btn btn-info' %>
+			</div>
+			<!-- <div class="ratings">
+				<p class="pull-right">15 reviews</p>
+				<p>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+					<span class="glyphicon glyphicon-star"></span>
+				</p>
+			</div> -->
+		</div>
+	</div>
+	<%end%>	
+</div>

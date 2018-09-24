@@ -1,0 +1,304 @@
+
+
+<h1 class="page-header">Profile</h1>
+
+<div class="row">
+	<div class="col-md-4 col-sm-6">    
+    <%= render 'profile' %>
+  </div>
+
+  <div class="col-md-4 col-sm-6">                                       
+    <div class="user-wrapper profile">        
+      <ul class="list-group">
+        <div class="description">
+          <h4>Matrimony Details</h4>
+        </div>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Full Name</small></label></div>
+            <div class="col-xs-8"><%= current_user.email %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Surname</small></label></div>
+            <div class="col-xs-8"><%= current_user.gender ? "Male" : "Female" %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Gender</small></label></div>
+            <div class="col-xs-8"><%= current_user.phone %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> DOB</small></label></div>
+            <div class="col-xs-8"><%= current_user.aadhar_card %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Height</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Weight</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Skin Color</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Qualification</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Hobbies</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Cast</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Category</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Gowthram</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Address</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Designation</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Income</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Working Company</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Company Address</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Marriage Status</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+
+
+
+
+        <div class="description text-right">
+          <a href="#" class="btn btn-info btn-sm"> Edit </a> 
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-sm-6">
+    <div class="user-wrapper">
+      <ul class="list-group">
+        <div class="description">
+          <h4><i class="fa fa-male"> </i> Father Details</h4>
+        </div>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Full Name </small></label></div>
+            <div class="col-xs-8"><%= current_user.email %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Designation </small></label></div>
+            <div class="col-xs-8"><%= current_user.gender ? "Male" : "Female" %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Occupation</small></label></div>
+            <div class="col-xs-8"><%= current_user.phone %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Working Status</small></label></div>
+            <div class="col-xs-8"><%= current_user.aadhar_card %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Location</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Property Details</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Family Members</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Aadhar Card</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Email</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+        <div class="description text-right">
+          <a href="#" class="btn btn-info btn-sm"> Edit </a> 
+        </div>
+      </ul>
+      <br>
+      <ul class="list-group">
+        <div class="description">
+          <h4><i class="fa fa-female"> </i> Mother Details</h4>
+        </div>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Full Name </small></label></div>
+            <div class="col-xs-8"><%= current_user.email %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Designation </small></label></div>
+            <div class="col-xs-8"><%= current_user.gender ? "Male" : "Female" %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Occupation</small></label></div>
+            <div class="col-xs-8"><%= current_user.phone %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Working Status</small></label></div>
+            <div class="col-xs-8"><%= current_user.aadhar_card %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Location</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Property Details</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Family Members</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Aadhar Card</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-xs-4 text-right"><label><small> Email</small></label></div>
+            <div class="col-xs-8"><%= current_user.address %></div>
+          </div>
+        </li>
+        <div class="description text-right">
+          <a href="#" class="btn btn-info btn-sm"> Edit </a> 
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

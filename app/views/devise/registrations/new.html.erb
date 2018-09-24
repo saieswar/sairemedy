@@ -1,0 +1,625 @@
+  
+
+  <!-- <div class="col-sm-6 hidden-xs">
+  <%= image_tag "sign-up.jpg", class: "img-responsive" %>
+</div> -->
+<h2 class="page-header">Sign up</h2>
+
+
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a onclick="$('.serial-no').hide();" href="#free" aria-controls="free" role="tab" data-toggle="tab">Free User</a></li>
+  <li role="presentation"><a onclick="$('.serial-no').hide();" href="#lifetime" aria-controls="lifetime" role="tab" data-toggle="tab">Life Time User</a></li>
+  <li role="presentation"><a onclick="$('.serial-no').hide();" href="#pandit" aria-controls="pandit" role="tab" data-toggle="tab">Pandit</a></li>
+</ul>
+
+<br>
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="free">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag "signin.jpg", class: "img-responsive" %>
+
+        <h3>READ BEFORE YOU SIGN UP</h3>
+
+        <ol>
+          <li>Free sign up fields are mentioned in right side box.</li>
+          <li>A page will be created for you  after signup.</li>
+          <li>You can enjoy with 9 fields after login.</li>
+          <li>For free sign user you can enjoy only some fields.</li>
+          <li>The page will be block after one month.</li>
+          <li>If you want to activate u need to take life membership.</li>
+          <li>For any person the life member ship will be charged 1000rs for life time.</li>
+          <li>No other charges will be taken once you login.</li>
+          <li>In free sign up you can enjoy with numerology fields matrimony matching report and some other  useful fields will attract you more.</li>
+          <li>In mobile also you can check your profile easily.</li>
+        </ol>
+        <%= image_tag "image6.jpg", class: "img-responsive" %>  
+      </div>
+      <div class="col-sm-6">
+        <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), multipart: true) do |f| %>
+        <%= devise_error_messages! %>
+
+        <%= f.hidden_field :role, :value => User::TYPE_FREE_USER %>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :surname %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :gender %>
+          <div class="row">     
+            <div class="col-xs-3">
+              <div class="radio">
+                <%= label_tag do %>
+                <%= f.radio_button :gender, true %> Male
+                <%end%>
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div class="radio">
+                <%= label_tag  do %>
+                <%= f.radio_button :gender, false %> Female
+                <%end%>
+              </div>
+            </div>
+          </div>  
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :dob, "Your Date of Birth" %>
+          <% born_on = Time.now %>
+          <div class="form-control">
+            <%= f.date_select( :dob, order: [ :day,:month,:year], html_options: {class: "form-control"}, date_separator: '-',  prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, :start_year=>Date.today.year-100) %> 
+          </div>            
+        </div>
+
+        <div class="form-group">
+          <%= f.label :avatar, "Photo" %>
+          <%= f.file_field :avatar  %>
+          <p class="help-block">Upload pic for your profile.</p>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :phone %>
+          <%= f.text_field :phone,class: "form-control", placeholder: "Phone" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>    
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter Password" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control", placeholder: "Re-enter Password" %>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="form-group">
+          <%= label_tag :option, "Choose Your Type" %>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="radio">            
+                <%= label_tag do %>
+                <%= radio_button_tag 'paid', false %> Free User
+                <%end%>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="radio">
+                <%= label_tag do %>
+                <%= radio_button_tag 'paid', true, checked: true %> Life Time User (Paid)
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> I Agree the <a data-toggle="modal" data-target="#terms">Terms and Conditions</a>
+          </label>
+        </div>
+
+        <%= f.hidden_field :is_paid, :value => false %>
+
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn btn-success btn-block btn-lg" %>
+        </div>
+
+
+
+        <% end %>
+      </div>
+    </div>
+    <br>          
+  </div>
+
+  <div role="tabpanel" class="tab-pane fade" id="lifetime">
+    <div class="row">
+      <div class="col-sm-6">
+
+        <%= image_tag "signin.jpg", class: "img-responsive" %>
+
+        <h3>READ BEFORE YOU SIGN UP</h3>
+        <ol>
+          <li>Click on right side life time user and fill the form to create your account.</li>
+          <li>To fill the form you must pay 1000rs to become a life membership in my site</li>
+          <li>Once if you pay 100rs life time free service will be available</li>
+          <li>The customer must flll  the reference number of the person who gave reference about my site.</li>
+          <li>Once you type the reference number  your name will be enter into the reference person account like that if any customer cross 100 references the customer will get a promo  code  of cash .</li>
+          <li>This facility will be applicable only for life time user only.  </li>
+        </ol>
+      </div>
+      <div class="col-sm-6">
+        <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), multipart: true) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :role, :value => User::TYPE_PAID_USER %>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :surname %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :gender %>
+          <div class="row">     
+            <div class="col-xs-3">
+              <div class="radio">
+                <%= label_tag do %>
+                <%= f.radio_button :gender, true %> Male
+                <%end%>
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div class="radio">
+                <%= label_tag  do %>
+                <%= f.radio_button :gender, false %> Female
+                <%end%>
+              </div>
+            </div>
+          </div>  
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :dob, "Your Date of Birth" %>
+          <% born_on = Time.now %>
+          <div class="form-control">
+            <%= f.date_select( :dob, order: [ :day,:month,:year], html_options: {class: "form-control"}, date_separator: '-',  prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, :start_year=>Date.today.year-100) %> 
+          </div>            
+        </div>
+
+        <div class="form-group">
+          <%= f.label :avatar, "Photo" %>
+          <%= f.file_field :avatar  %>
+          <p class="help-block">Upload pic for your profile.</p>
+        </div>
+
+
+
+
+
+
+        <div class="form-group" id="reference-no">
+          <%= f.label :reference_no, "Reference Number" %>
+          <%= f.text_field :reference_no, class: "form-control", placeholder: "Reference number or Advertisment" %>
+        </div>
+
+
+        <div class="form-group">
+          <%= label_tag :option, "Choose Your Option" %>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="radio">
+                <%= label_tag do %>
+                <%= radio_button_tag 'customer_type', 'old' %> Old Customer
+                <%end%>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="radio">
+                <%= label_tag do %>
+                <%= radio_button_tag 'customer_type', 'new' %> New Customer
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group serial-no">
+          <%= f.label :serial_no, "Serial Number" %>
+          <%= f.text_field :serial_no, class: "form-control", placeholder: "Enter the serial number" %>
+        </div>        
+
+        <div class="form-group">
+          <%= f.label :phone %>
+          <%= f.text_field :phone,class: "form-control", placeholder: "Phone" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :aadhar_card %>
+          <%= f.text_field :aadhar_card, class: "form-control", placeholder: "Aadhar Card Number" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>    
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter Password" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control", placeholder: "Re-enter Password" %>
+        </div>
+
+        <!-- <div class="form-group">
+          <%= label_tag :option, "Choose Your Type" %>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="radio">            
+                <%= label_tag do %>
+                <%= radio_button_tag 'paid', false %> Free User
+                <%end%>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="radio">
+                <%= label_tag do %>
+                <%= radio_button_tag 'paid', true, checked: true %> Life Time User (Paid)
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <%= f.hidden_field :is_paid, :value => true %>
+
+
+        <div class="form-group">
+          <%= f.label :address %>
+          <%= f.text_area :address, class: "form-control", placeholder: "Enter the reference number" %>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> I Agree the <a data-toggle="modal" data-target="#terms">Terms and Conditions</a>
+          </label>
+        </div>
+
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn btn-success btn-block btn-lg" %>
+        </div>
+
+
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div role="tabpanel" class="tab-pane fade" id="pandit">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag "signin.jpg", class: "img-responsive" %>
+
+        <h3>READ BEFORE YOU SIGN UP</h3>        
+
+        <p>This is the first time we are introducing the free sign up for pandits through out the world.</p>
+
+        <p>In this we are providing 3 blocks for pandit.</p>
+
+        <ol>
+          <li>Vedam certified pandits ( homams,marriages,gruhapravesham  etc )</li>
+          <li>Consultancy pandits  ( vaastu, astrology, numerology,palmistry  etc)</li>
+          <li>Both category pandits (homams, astrology etc)</li>
+        </ol>
+
+        <p>We are requesting the pandits  to join in our site for public service in an easy way.</p>
+
+        <p>The people who are joining in our site can choose their options according to their choice.</p>
+
+        <p>From  different states,districts, cities,town and villages people can easily choose their option and book the pandit according to their convenience to fulfil their motive.</p>
+
+        <p>It s an easy communication between the pandit and customer to select their own choice and to negotiate the pandit according to their wish.</p>
+
+        <p>The pandit after negotiation they need not to pay ay commission to our company,but they need to tie our banner in the function where they attend. </p>
+
+        <p>For your page maintainance  pandit need to pay 1000rs yearly to our company.</p>
+
+        <p>For consultancy pandits they can purchase the products from our site in a bulk to provide the items to their customers in an easy way. We are also providing the pandit  parishkarr  book which will be helpful to purchase the remedies for your customers. Special promo codes will be given to the pandit  when they reach the targets in purchasing products in our site.</p>
+
+        <p>In your special page we are providing you a advertise block which you utilize to promote your ads, books magazine etc . ( for this charges will be taken according to packages)</p>
+
+        <p>No credits will be given to purchasing of  products.</p>   
+      </div>
+      <div class="col-sm-6">
+        <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), multipart: true) do |f| %>
+        <%= devise_error_messages! %>
+        <% resource.build_pandit %>
+
+        <%= f.hidden_field :role, :value => User::TYPE_PANDIT %>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :gender %>
+          <div class="row">     
+            <div class="col-xs-3">
+              <div class="radio">
+                <%= label_tag do %>
+                <%= f.radio_button :gender, true %> Male
+                <%end%>
+              </div>
+            </div>
+            <div class="col-xs-9">
+              <div class="radio">
+                <%= label_tag  do %>
+                <%= f.radio_button :gender, false %> Female
+                <%end%>
+              </div>
+            </div>
+          </div>  
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :dob, "Your Date of Birth" %>
+          <% born_on = Time.now %>
+          <div class="form-control">
+            <%= f.date_select( :dob, order: [ :day,:month,:year], html_options: {class: "form-control"}, date_separator: '-',  prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, :start_year=>Date.today.year-100) %> 
+          </div>            
+        </div>
+
+        <div class="form-group">
+          <%= f.label :avatar, "Photo" %>
+          <%= f.file_field :avatar  %>
+          <p class="help-block">Upload pic for your profile.</p>
+        </div>
+
+        <%= f.fields_for :pandit do |build| %>
+        <div class="form-group">
+          <label>Choose your option</label>
+          <div class="radio">
+            <label class="radio-inline">
+              <%= build.radio_button :deals, "Vedam Pandit" %> Vedam Pandit
+            </label>              
+
+            <label class="radio-inline">
+              <%= build.radio_button :deals, "Consultancy Pandit" %> Consultancy Pandit
+            </label>              
+
+            <label class="radio-inline">
+              <%= build.radio_button :deals, "Vedam Pandit & Consultancy Pandit" %> Both
+            </label>
+          </div>          
+        </div>
+
+
+        <div class="form-group">
+          <%= build.label :working_as,  class: 'control-label ' %>
+          <%= build.text_field :working_as, class: "form-control", placeholder: "Working As" %>          
+        </div>
+
+        <div class="form-group">
+          <%= build.label :experience, class: 'control-label ' %>
+          <%= build.number_field :experience, class: "form-control", placeholder: "Experience" %>          
+        </div>
+
+        <div class="form-group">
+          <%= build.label :city, 'Location', class: 'control-label ' %>
+          <%= build.text_field :city, class: "form-control", placeholder: "City / Town / Village" %>          
+        </div>
+
+        <div class="form-group">
+          <%= build.label :district, class: 'control-label ' %>
+          <%= build.text_field :district, class: "form-control", placeholder: "District" %>          
+        </div>
+
+        <div class="form-group">
+          <%= build.label :state, 'State', class: 'control-label ' %>
+          <%= build.text_field :state, class: "form-control", placeholder: "State" %>          
+        </div>
+
+        <div class="form-group">
+          <%= build.label :address, class: 'control-label ' %>
+          <%= build.text_area :address, class: "form-control", placeholder: "Address" %>          
+        </div>
+
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :aadhar_card %>
+          <%= f.text_field :aadhar_card, class: "form-control", placeholder: "Aadhar Card Number" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :phone, 'Contact Number' %>
+          <%= f.text_field :phone,class: "form-control", placeholder: "Phone" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>    
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter Password" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control", placeholder: "Re-enter Password" %>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> I Agree the <a data-toggle="modal" data-target="#terms">Terms and Conditions</a>
+          </label>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn btn-success btn-block btn-lg" %>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="signup-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Read once before you Sign up</h4>
+      </div>
+      <div class="modal-body">
+
+
+        <ol>
+          <li>Left side sign up fields are mentioned in right side box.</li>
+          <li>A page will be created for you  after signup</li>
+          <li>You can enjoy with 9 fields after login</li>
+          <li>9 fields you can observe your page</li>
+          <li>Every page fields will motivate you more</li>
+          <li>The customer will get a promocode cash when he reach 100 references in his block.</li>
+          <li>Every two months you can check your updates in astrology block.</li>
+          <li>If you purchase products from your page you will get promo codes when you reach our target points.</li>
+          <li>For every 100 refrences u will get promocode  .</li>
+          <li>You can book pandit according to your option also.</li>
+          <li>Matrimony matching will helpful to check or your friends matching in a free of cost.</li>
+          <li>If once you became a life member in my account I can provide the address of matching report, but if once matching set through our site the couples must pay 1% amount  to my site .</li>
+          <li>Remedies , mantras will helpful for every one to solve your problem</li>
+          <li>0 to 9 yrs baby name block is free and you can select your baby name free  according to numerology  .</li>
+          <li>Products like stones, fengshui items etc all original items will be provided in our page.  </li>
+        </ol>
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="terms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Terms and Conditions</h4>
+      </div>
+      <div class="modal-body">
+
+        <p>I Agree the below terms and conditions to join as a membership for free user, life time user and pandit user ,According to our mutual wish.</p>
+        <ol>
+          <li>Once you become a life time user you need to keep your registered umber carefully. Once you loss your registered number you need to repay the full amount to get back the same registered number.</li>
+          <li>Once you purchase the product in our site no replacement of items or refund of money.</li>
+          <li>If any dues list are noticed, your page will be blocked within 30days of your due date.If you need to deactivate the page you have to contact the Admin.</li>
+          <li>Please note In the matrimony block we will provide data path only.For remaining problems Admin is not at all responsible.</li>
+          <li>For free users the customer page will be processed upto one month only.To continue with life time process you have to pay the full amount.</li>
+          <li>In astrology block for every two months review service, we can have, but for any unforeseen event admin is not responsible.</li>
+          <li>If you cannot mobilize 100 customers you will loose your promocode gift and nobody can either claim or continue the same.</li>
+          <li>You are here by inform for the pandit block the pandits have to contribute Rs1000 per annum,failing  which the name of pandit account will be deleted.</li>
+          <li>The above terms and conditions are purely for the sake of smooth functioning of www.sairemedy vani.com and they will be considered , accordingly on your acceptance only.</li>
+        </ol>
+
+        <p><strong>Note:</strong> I accept the Admin has right to change or modify any of the above terms and conditions.</p>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+  $('input[type=radio][name=abc]').change(function() {
+    // check radio button value by this.value
+    // hide div blocks by $('div#id').hide();
+  });
+
+
+  $(document).ready(function() {
+
+    $('#signup-info').modal('show')
+
+    function oldCustomer(){
+      $('.serial-no').hide();
+
+      $('input[type=radio][name=customer_type]').change(function() {
+        if (this.value == 'old') {            
+          $('.serial-no').show();            
+        }
+        else if (this.value == 'new') {
+          $('.serial-no').hide();
+        }
+      });      
+    }
+
+    oldCustomer();
+
+  });
+</script>

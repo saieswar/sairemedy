@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  astrologers: false
+  numerologist: false
+  door_no: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  user_id: 
+
+two:
+  astrologers: false
+  numerologist: false
+  door_no: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  user_id: 

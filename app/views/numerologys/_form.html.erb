@@ -1,0 +1,76 @@
+<div class="form-group">
+  <%= label_tag :name %><br />
+  <%= text_field_tag :name, "",autofocus: true, class: "form-control", placeholder: "Enter Name" %>
+</div>
+
+<div class="form-group">
+  	<%= label_tag :gender, "Gender" %>
+  	<div class="row">  		
+  		<div class="col-xs-3">
+  			<div class="radio">
+				<%= label_tag do %>
+					<%= radio_button_tag :gender, 'male' %> Male
+				<%end%>
+			</div>
+  		</div>
+  		<div class="col-xs-9">
+  			<div class="radio">
+				<%= label_tag do %>
+					<%= radio_button_tag :gender, 'female' %> Female
+				<%end%>
+			</div>
+  		</div>
+  	</div>	
+</div>				
+
+<div class="form-group">
+  <%= label_tag :date_of_birth %>
+  <% born_on = Time.now %>
+  <div class="form-control">
+  	<%= select_date(born_on, order: [ :day,:month,:year], html_options: {class: "form-control"}, date_separator: '-',  prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }) %>	
+  </div>			      
+</div>
+
+<!-- <div class="form-group">
+  	<%= label_tag :option, "Choose Your Option" %>
+
+	<div class="radio">
+		<%= label_tag do %>
+			<%= radio_button_tag 'method', 'luckynumber' %> Lucky Number
+		<%end%>
+	</div>
+
+	<div class="radio">
+		<%= label_tag do %>
+			<%= radio_button_tag 'method', 'cellnumbermatch' %> Cell Number Matc
+		<%end%>
+	</div>
+
+	<div class="radio">
+		<%= label_tag do %>
+			<%= radio_button_tag 'method', 'vehiclenumbermatch' %> Vechicle NUmber Match
+		<%end%>
+	</div>
+
+	<div class="radio">
+		<%= label_tag do %>
+			<%= radio_button_tag 'method', 'digital' %> Digital
+		<%end%>
+	</div>
+
+	<div class="radio">
+		<%= label_tag do %>
+			<%= radio_button_tag 'method', 'friendship' %> Friendship
+		<%end%>
+	</div>
+
+	<div class="radio">
+		<%= label_tag do %>
+			<%= radio_button_tag 'method', 'getfavs' %> Get Favorites
+		<%end%>
+	</div>
+</div> -->
+
+<div class="form-group">
+ 	<%= submit_tag "Get Result", class: "btn btn-success btn-block" %>
+</div>

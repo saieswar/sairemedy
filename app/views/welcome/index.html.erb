@@ -275,7 +275,7 @@
             </div>
             <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">                    
               <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mobile"> -->
-              <%= text_field_tag :phone, "",class: "form-control" ,placeholder: "Phone", :minlength => 10, :maxlength => 10, :size => 10%>
+              <%= telephone_field_tag :phone, "",class: "form-control" ,placeholder: "Phone", :minlength => 10, :maxlength => 10, :size => 10, pattern: "^[0-9]*$"%>
             </div>
             <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">                    
               <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mobile"> -->

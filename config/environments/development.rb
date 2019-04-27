@@ -45,13 +45,26 @@ Rails.application.configure do
   config.assets.debug = true
   config.action_mailer.default :charset=>"utf-8"
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => 'smtp.gmail.com',
-    :port                 => 587,
-    :domain               => 'gmail.com',
-    :user_name            => 'remedyvans@gmail.com',
-    :password             => 'pvnmurthii',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true    
-  }
+  # config.action_mailer.smtp_settings = {
+  #   :address              => 'smtp.gmail.com',
+  #   :port                 => 587,
+  #   :domain               => 'gmail.com',
+  #   :user_name            => 'remedyvans@gmail.com',
+  #   :password             => 'pvnmurthii',
+  #   :authentication       => 'plain',
+  #   :enable_starttls_auto => true    
+  # }
+
+ #  ActionMailer::Base.register_interceptor(SendGrid::MailInterceptor)
+
+  ActionMailer::Base.smtp_settings = {
+   :address => 'smtp.sendgrid.net',
+   :port => '587',
+   :domain => 'sendgrid.com',
+   :authentication => :plain,
+   :user_name => "shankar1999",
+   :password => "nandu301294",
+   :enable_starttls_auto => true,
+   :openssl_verify_mode => 'none'
+ }
 end

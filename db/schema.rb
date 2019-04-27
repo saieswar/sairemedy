@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180210065052) do
+ActiveRecord::Schema.define(version: 20190409162744) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.string   "email",      limit: 255
+    t.string   "name",       limit: 255
+    t.string   "phone",      limit: 255
+    t.text     "reason",     limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "astro_pdfs", force: :cascade do |t|
     t.string   "avatar",     limit: 255

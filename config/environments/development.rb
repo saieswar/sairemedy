@@ -57,14 +57,4 @@ Rails.application.configure do
 
  #  ActionMailer::Base.register_interceptor(SendGrid::MailInterceptor)
 
-  ActionMailer::Base.smtp_settings = {
-   :address => 'smtp.sendgrid.net',
-   :port => '587',
-   :domain => 'sendgrid.com',
-   :authentication => :plain,
-   :user_name => "shankar1999",
-   :password => "nandu301294",
-   :enable_starttls_auto => true,
-   :openssl_verify_mode => 'none'
- }
 end

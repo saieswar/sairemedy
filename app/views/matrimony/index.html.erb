@@ -5,7 +5,7 @@
     <%= form_tag matrimony_index_path ,class: "form-inline", remote: true, method: :get do %>
       <div class="form-group form-group-sm col-sm-12">
         <div class="col-sm-4">
-          <%= label_tag :Female, "Female Nakshatra Paadam" ,class: "control-label"%>
+          <%= label_tag :Female, "Female Nakshatra & Paadam" ,class: "control-label"%>
         </div>
         <div class="col-sm-6">
           <%= select_tag "f_nakshatra", options_for_select(@keys), class: "form-control" %>
@@ -15,7 +15,7 @@
       <br>
       <div class="form-group form-group-sm col-sm-12">
         <div class="col-sm-4">
-          <%= label_tag :Male, "Male Nakshatra Paadam" ,class: "control-label"%>
+          <%= label_tag :Male, "Male Nakshatra & Paadam" ,class: "control-label"%>
         </div>
         <div class="col-sm-6">
           <%= select_tag "m_nakshatra", options_for_select(@keys), class: "form-control" %>

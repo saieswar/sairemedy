@@ -1,19 +1,32 @@
 <h1 class="page-header ">Matrimony</h1>
 
 <div class="well well-xs bg-red filter">    
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2 matrimony_div">
     <%= form_tag matrimony_index_path ,class: "form-inline", remote: true, method: :get do %>
-      <div class="form-group form-group-sm">
-        <%= label_tag :Female, "Female"%>
-        <%= select_tag "f_nakshatra", options_for_select(@keys), class: "form-control" %>
+      <div class="form-group form-group-sm col-sm-12">
+        <div class="col-sm-4">
+          <%= label_tag :Female, "Female Nakshatra Paadam" ,class: "control-label"%>
+        </div>
+        <div class="col-sm-6">
+          <%= select_tag "f_nakshatra", options_for_select(@keys), class: "form-control" %>
+        </div>
       </div>
-      <div class="form-group form-group-sm">
-        <%= label_tag :Male, "Male"%>
-        <%= select_tag "m_nakshatra", options_for_select(@keys), class: "form-control" %>
+      <br> 
+      <br>
+      <div class="form-group form-group-sm col-sm-12">
+        <div class="col-sm-4">
+          <%= label_tag :Male, "Male Nakshatra Paadam" ,class: "control-label"%>
+        </div>
+        <div class="col-sm-6">
+          <%= select_tag "m_nakshatra", options_for_select(@keys), class: "form-control" %>
+        </div>
       </div>
 
       <!-- <button type="submit" class="btn btn-primary"> <i class="fa fa-search"></i> </button> -->
-      <%= submit_tag "Sumbit", class: "btn btn-primary" %>
+      <br> <br>
+      <div class="col-sm-6 submit_button">
+        <%= submit_tag "Sumbit", class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>
@@ -24,3 +37,13 @@
 <script type="text/javascript">
   $("#ex2").slider({});
 </script>
+
+<style type="text/css">
+  .submit_button{
+    text-align: center;
+    padding-left: 150px;
+  }
+  #matrimony_div{
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,37 @@
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title">Result</h3>
+      </div>
+      <div class="modal-body">
+        <p id="res_icon"><%= @value.to_f%> <% if @value.to_f <= 0 %> <i class="fa fa-times" aria-hidden="true"></i>
+          <% else%>
+          <i class="fa fa-check" aria-hidden="true"></i>
+
+ <% end %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<style type="text/css">
+  #res_icon{
+    font-size: 55px;
+    text-align: center;
+  }
+  #res_icon .fa-remove:before, .fa-close:before, .fa-times:before {
+    color: red;
+  }
+  #res_icon .fa-check:before{
+    color: green;
+  }
+</style>

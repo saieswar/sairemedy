@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   match '/getpandits' => "pandits#getpandits", via: [:get]
 
   match '/create_appointments' => 'welcome#create_appointments', via: :post
+  match '/get_data' => 'matrimony#get_data', via: :post
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

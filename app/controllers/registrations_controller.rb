@@ -5,9 +5,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
 
-    user = User.create!(sign_up_params)
+    @user = User.new(sign_up_params)
 
-    if user
+    if @user.save
       flash[:notice] = "User created successfully"
       redirect_to new_user_session_path   
       # case params[:role]
@@ -24,7 +24,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 
     else
-    	flash.now[:alert] = "User creation faild"
+    	flash.now[:alert] = "User creation failed"
     	render 'new'
     end
 

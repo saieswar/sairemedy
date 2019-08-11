@@ -11,15 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190409162744) do
+ActiveRecord::Schema.define(version: 20190723154942) do
 
   create_table "appointments", force: :cascade do |t|
-    t.string   "email",      limit: 255
-    t.string   "name",       limit: 255
-    t.string   "phone",      limit: 255
-    t.text     "reason",     limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "email",          limit: 255
+    t.string   "name",           limit: 255
+    t.string   "phone",          limit: 255
+    t.text     "reason",         limit: 65535
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "surname",        limit: 255
+    t.date     "date_of_birth"
+    t.time     "time_of_birth"
+    t.string   "place_of_birth", limit: 255
+    t.text     "address",        limit: 65535
+    t.string   "pay_amount",     limit: 255
   end
 
   create_table "astro_pdfs", force: :cascade do |t|
@@ -223,6 +229,10 @@ ActiveRecord::Schema.define(version: 20190409162744) do
     t.datetime "updated_at",                                           null: false
     t.integer  "contact_id",             limit: 4
     t.string   "role",                   limit: 255
+    t.string   "surname",                limit: 255
+    t.date     "date_of_birth"
+    t.time     "time_of_birth"
+    t.string   "place_of_birth",         limit: 255
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

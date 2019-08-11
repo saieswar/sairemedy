@@ -196,6 +196,7 @@
               Door No: 13-9-14/5, Kaki street,<br>
               Near Kinnera Theatre <br>
               Srikakulam<br>
+              Phone: 7382118129, 9676038528, 7013170502<br>
               Andhra Pradesh - 532001<br><br>
 
               <!-- <strong>Email: </strong> example@gmail.com<br>
@@ -264,10 +265,21 @@
             <h4 class="modal-title" id="myModalLabel">Appointment Form</h4>
           </div>
           <div class="modal-body">
-
+            <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">                      
+              <%= text_field_tag :surname, "",class: "form-control" ,placeholder: "SurName"%>
+            </div>
             <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">                      
               <!-- <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name"> -->
               <%= text_field_tag :name, "",class: "form-control" ,placeholder: "Name"%>
+            </div>
+            <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">                      
+              <%= date_field_tag :date_of_birth, "",class: "form-control" ,placeholder: "Date of Birth"%>
+            </div>
+            <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">                      
+              <%= time_field_tag :time_of_birth, "",class: "form-control" ,placeholder: "Time of Birth"%>
+            </div>
+            <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">                      
+              <%= text_field_tag :place_of_birth, "",class: "form-control" ,placeholder: "Place of Birth"%>
             </div>
             <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">                     
               <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
@@ -279,7 +291,14 @@
             </div>
             <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">                    
               <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mobile"> -->
+              <%= text_area_tag :address, "",class: "form-control" ,placeholder: "Address"%>
+            </div>
+            <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">                    
+              <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mobile"> -->
               <%= text_area_tag :reason, "",class: "form-control" ,placeholder: "Cause for appointment"%>
+            </div>
+            <div class="form-group wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">                      
+              <%= text_field_tag :pay_amount, "",class: "form-control" ,placeholder: "Pay Amount"%>
             </div>
           </div>
           <div class="modal-footer">

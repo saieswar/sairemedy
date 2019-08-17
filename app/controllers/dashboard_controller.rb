@@ -1,3 +1,5 @@
+require 'csv'
+
 class DashboardController < ApplicationController
 	before_action :authenticate_user!
 	# before_action :is_admin?
@@ -25,5 +27,20 @@ class DashboardController < ApplicationController
     else
 
     end
+  end
+
+  def download_appointments_csv
+    appointments = Appointment.all
+    respond_to do |format|
+      format.csv do
+        csv_data = CSV.generate do |csv|
+        csv << ["Email", "Name", "Surname", "Phone", "Date of Birth", "Time of Birth", "Place of Birth", "Address", "Reason" , "Pay Amount"]
+          appointments.each do |appointment|
+            csv << [appointment.email, appointment.name, appointment.surname, appointment.phone, appointment.date_of_birth, appointment.time_of_birth, appointment.place_of_birth, appointment.address, appointment.reason, appointment.pay_amount]
+          end
+        end
+          send_data(csv_data, :type => 'text/csv; charset=utf-8; header=present', :filename => "appointments_#{Date.today.strftime("%d%b")}.csv") 
+      end
+    end 
   end
 end

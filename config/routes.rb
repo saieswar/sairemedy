@@ -64,6 +64,7 @@ Rails.application.routes.draw do
 
   match '/create_appointments' => 'welcome#create_appointments', via: :post
   match '/get_data' => 'matrimony#get_data', via: :post
+  match '/download_appointments_csv' => 'dashboard#download_appointments_csv',via: :get,defaults: {format: :csv}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

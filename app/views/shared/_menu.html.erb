@@ -1,3 +1,6 @@
+<div class="">
+  <%= image_tag( "heading.jpg",  class: "img-responsive") %>
+</div>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -32,7 +35,7 @@
         <a class="page-scroll btn navbar-btn btn-default" href="#contact">Contact</a>
 
         <a class="page-scroll btn navbar-btn btn-default" data-toggle="modal" data-target="#queries">Queries</a>        
-        <a class="page-scroll btn navbar-btn btn-default" data-toggle="modal" data-target="#appointment">Appointment</a>
+        <!-- <a class="page-scroll btn navbar-btn btn-default" data-toggle="modal" data-target="#appointment">Appointment</a> -->
       </ul>
 
 
@@ -44,7 +47,7 @@
 
         <% if user_signed_in? %>
         <li><%= link_to "Dashboard", dashboard_index_path%> </li>
-        <li>
+        
           <li><%= link_to current_user.email, dashboard_index_path%> </li>
           <li>
             <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
@@ -58,3 +61,4 @@
     </div>
     <!-- /.container -->
   </nav>
+

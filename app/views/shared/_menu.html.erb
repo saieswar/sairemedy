@@ -1,5 +1,5 @@
 <div class="">
-  <%= image_tag( "heading.jpg",  class: "img-responsive") %>
+  <%= image_tag( "headdd.png",  class: "img-responsive", style: "width: 100%") %>
 </div>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -19,22 +19,45 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
         <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-        
-        <a class="page-scroll btn navbar-btn btn-default" href="#page-top">Home</a>
-        
-        <a class="page-scroll btn navbar-btn btn-default" href="#about">About</a>
+        <li>        
+          <a class="page-scroll btn navbar-btn btn-default" href="#page-top">Home</a>
+        </li>
+        <li>
+          <a class="page-scroll btn navbar-btn btn-default" href="#about">About</a>
+        </li>
         <% unless user_signed_in? %>
-        <%= link_to "Sign In", new_user_session_path,  class: "btn navbar-btn btn-default" %> 
-
-        <%= link_to "Sign Up", new_user_registration_path,  class: "btn navbar-btn btn-default " %>
+        <li>
+          <%= link_to "Sign In", new_user_session_path,  class: "btn navbar-btn btn-default" %> 
+        </li>
+        <li>
+          <%= link_to "Sign Up", new_user_registration_path,  class: "btn navbar-btn btn-default " %>
+        </li>
         <%end%>
-
-
-        <a class="page-scroll btn navbar-btn btn-default" href="#gallery">Photo Gallery</a>        
-        
-        <a class="page-scroll btn navbar-btn btn-default" href="#contact">Contact</a>
-
-        <a class="page-scroll btn navbar-btn btn-default" data-toggle="modal" data-target="#queries">Queries</a>        
+        <li>
+          <a class="page-scroll btn navbar-btn btn-default" href="#gallery">Photo Gallery</a>        
+        </li>
+        <li>
+          <a class="page-scroll btn navbar-btn btn-default" href="#contact">Contact</a>
+        </li>
+        <li>
+          <a class="page-scroll btn navbar-btn btn-default" data-toggle="modal" data-target="#queries">Queries</a>        
+        </li>
+        <li class="dropdown">
+          <a class=" page-scroll btn navbar-btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Services
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+          <li><a href="#" data-toggle="modal" data-target="#astrology">Astrology</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#numerology">Numerology</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#babynames">Baby Names</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#products">Products</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#vastu">Vastu</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#matrimony">Matrimony</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#mantras">Mantras</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#remedies">Remedies</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#pandit">Pandit</a></li>
+        </ul>
+        </li>
         <!-- <a class="page-scroll btn navbar-btn btn-default" data-toggle="modal" data-target="#appointment">Appointment</a> -->
       </ul>
 
@@ -62,3 +85,455 @@
     <!-- /.container -->
   </nav>
 
+<div class="modal fade" id="astrology" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Astrology</h4>
+        </div>
+        <div class="modal-body">
+          <p>Astrology sees mankind as being not only influenced by hereditary factors and
+
+            the environment, but also by the state of our solar system at the moment of birth. 
+
+            The planets are regarded as basic life-forces, the tools we live by as well as the 
+
+            basis of our very substance. These planetary forces take on different forms, 
+
+            depending on their zodiacal position and on the way they relate to one another.
+          </p>
+
+          <p>The aspects formed between the planets describe 
+
+            these relationships, the positions of the planets in 
+
+            relation to the place of birth tell us of their expression 
+
+            in the spheres of life depicted by the astrological 
+
+            houses.
+          </p>
+
+          <p>By interpreting the roles of these players (the planets) and their qualities (the 
+
+            elements, signs and houses) and creating a synthesis, astrology is able to 
+
+            present a complete and comprehensive picture of the person and his potential, 
+
+            based on the natal horoscope.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="numerology" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body">
+          <p>Numerology is another modern method of divination, one whot attempts to  discern the occult significance of numbers. It too is a popular form of entertainment. Like palmistry, numerology is thousands of years old and strongly associated with the occult. The practice of using tarot cards and the cabala are rooted in numerology, and astrology also bears a relationship. Numerologists claim to offer the following information or advice: choosing the correct marriage partner, vocation, city, or house in which to live; individual “compatibility” with the products one uses; understanding one’s mate and friends better; when to buy property or invest in a business; the best days to take a trip, apply for a new job, start a new venture, have surgery, and so on. In this site we are providing  free blocks to know about your Digital Relationship
+          </p>
+
+          <p>Friendship Percentage, lucky number ,Favourable Date.</p>
+
+          <p>If u become a life member in my site you can see   your name correction pdf 
+
+            file.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="babynames" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Baby Names</h4>
+        </div>
+        <div class="modal-body">
+          <p>IN THIS BLOCK FOR THE FIRST TIME WE ARE INTRODUCING THE  CHILD 
+
+            NAMES FOR FREE  NUMEROLOGY CORRECTION UPTO 0-9 YRS CHILDHREN ONLY.
+          </p>
+
+          <p>FOR  THIS YOU  NEED TO FILL THE FIELDS AND YOU NEED TO CHOOSE YOUR 
+
+            FAVOURATE NAME ACCORDING TO STAR SOUND AND GRAHA SOUND.
+          </p>
+
+          <p>AFTER THAT U NEED TO SEARCH A NICE NAME TO YOUR KID. FOR THIS FIELD YOU 
+
+            NEED NOT TO BECOME A LIFE MEMBER IN OUR SITE as IT IS FREE . 
+          </p>
+
+          <p>FROM ABOVE 10YEARS CUSTOMER CAN CHECK THE PROBLEM OF YOUR NAME IN 
+
+            FREE OF COST. IF U NEED TO HAVE A CORRECTION OF YOUR NAME THEN YOU  
+
+            NEED TO BECOME A LIFE MEMBER IN OUR SITE.THEN YOU CAN GET YOUR NAME 
+
+            CORRECTION PDF FILE TO YOUR  OWN PAGE. THIS NAME CORRECTION WILL 
+
+            NEVER BE DONE INDIVIDUALLY IN OUR SITE. SO IF YOU BECOME A LIFE MEMBER 
+
+            THE NAME CORRECTION IS ONE OF THE PART IN THAT  PACKAGE.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="products" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Products</h4>
+        </div>
+        <div class="modal-body">
+          <p>In this block the life memberhip and ,freesign  both customers can purchase the products trough pay roll and the life membership customers only get promo codes according to the targets reaching.</p>
+          <p>The products are kankanalu,fengshui items, rudrakshas, tantra items,gems,malas etc.</p>
+          <p>The items are good quality and with nice price we are providing.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="vastu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Vastu</h4>
+        </div>
+        <div class="modal-body">
+          <p>VAASTU SHASTRA is an ancient Hindu practice which tells us how to  
+
+            construct buildings in harmony with natural forces for the  well being of 
+
+            an individual as well as  humanity as a whole. This precious  Hindu 
+
+            philosophy forms the the basis of  the  traditional Indian system of 
+
+            architecture.  Vaastu literally means the dwelling place. The rules of 
+
+            Vaastu are derived from 'Vaastu Purusha' who is depicted as a man lying 
+
+            with his head pointing northeast, in a grid of usually 64 squares. The 
+
+            different parts and directions are assigned to different Gods and 
+
+            Guardians. The 'Vaastu Purusha' is said to be the spirit of the site.  
+
+            Aesthetically correct dimensions of rooms, doors windows and even the 
+
+            structural parts like plinth and pillars can be determined on the concept of 
+
+            ‘Vaastu Purusha’. Vastu Purusha is described at the-end.
+          </p>
+
+          <p> The purpose of the vaastu  of  Vaastu shastra is to provide 
+
+            guidelines for proper construction of houses, shops, commercial buildings 
+
+            with brand name stores and   operating offices etc. Vaastu determines the 
+
+            position of the house with regard to points of a compass and suggests the 
+
+            points to keep in mind with respect to  buildings, lines, directions, skylines, 
+
+            elongations, levels, slopes, water (underground and overhead), kitchen, 
+
+            bedrooms, toilets, staircase, heights of ceilings and roofs, entrances, 
+
+            location of doors and windows, compound walls etc.
+          </p>
+
+          <p>The importance of Vaastu shastra lies in the fact that it is a result-
+
+            oriented science and gives desired results if applied properly. Vaastu 
+
+            shastra suggests ways in which we can live in tune with the laws of nature, 
+
+            so that we can be healthy, peaceful and efficiently and prosperous.
+          </p>  
+
+          <p> We can describe some ideal situations of houses and buildings 
+
+            according to VastuShastra.  According to this science, an ideal plot should 
+
+            be a square. Its  all four sides are straight and equal in length and it has 
+
+            equal angle of 90 degree at all four corners. Square is the best shape of a 
+
+            plot.   A rectangular plot having its length not more that double the 
+
+            breadth (length and breadth ratio not more than 1:2) is also a good plot. 
+
+            While selecting a plot,  geographical surroundings & level of the land and 
+
+            roads around the plot must given due importance.
+          </p>
+
+
+
+          <p>Direction of a plot can be determined by  using a magnetic 
+
+            compass. It is a device for finding direction. It has a freely moving needle 
+
+            which always points to the magnetic North. Make two lines crossing each 
+
+            other dividing a paper in four equal parts at 90-degree angle. Place a 
+
+            compass on paper in the middle of your plot and align it with two lines in 
+
+            the North and the South of the needle of the compass.
+          </p>
+
+          <p>Extend these lines on the plot and mark it to have exact direction.
+          </p>
+
+          <p> The size of length, breadth  both effect the fortune of the person who lives 
+
+            in it.  The Southwest portion of the house is meant for bedroom for adults. 
+
+            It may be located in the South, and will be congenial for comfortable living. 
+
+            Master bedroom may be on the upper storey, if any, in the Southwest 
+
+            portion of the house.  Direction of a person while sleeping also has 
+
+            importance in Vaastu shastra. One should never sleep having head 
+
+            towards the North Pole and legs towards the South Pole.
+          </p>
+
+          <p> However one may sleep having legs towards the West and head 
+
+            towards the East for mental peace, good thoughts and spirituality.  
+          </p>
+
+          <p>Children room should be in the northwest or West Side. To have a 
+
+            better concentration they should have a separate study close to their 
+
+            bedrooms.  Location of kitchen has health implications.
+          </p>
+
+          <p>Presiding deity of the Southeast is Agni, the God of fire; hence kitchen may 
+
+            be located  the southeast corner of the house.
+          </p>
+
+          <p>The dining room should be located in the East or the West or the North 
+
+            near the kitchen. Northwest corner is good for perishable goods. Dinning 
+
+            room may be in the Northwest direction, which leads to quicker 
+
+            consumption of food. Drawing room should be preferably in the Northeast 
+
+            or the North or the East but not in the Southwest portion of the house. 
+
+            More vacant space should be given in the Northeast corner of the drawing 
+
+            room.. Door is preferable on the East-towards-the-Northeast-side. 
+          </p>   
+
+          <p>While studying, one should face the North or the East or the Northeast  
+
+            Therefore the best locations for study room are the north, east, or 
+
+            northeast. These directions attract the positive effects of Mercury 
+
+            increasing brain power, Jupiter increasing wisdom, Sun increasing 
+
+            ambition and Venus helps in bringing about creativity in new thoughts 
+
+            and ideas.  Books may be kept in the Southwest side of the room. Study 
+
+            room may have door on the East or the North,orthe-Northeast
+
+            As per Vaastushastra, the East is the place for the bathroom. Attached 
+
+            bathroom may preferably be in the North, or the East of a bedroom. 
+
+            Shower, bathing tub and wash basin in the bathroom may be in the 
+
+            Northeast, or the North or the East direction. One may have bath in the 
+
+            North or the East area in the bathroom. 
+
+            Bathroom should never be constructed in the center or in the southwest 
+
+            corner-of-the-house.
+          </p>
+
+          <p>Storeroom should be made in the Northwest or Southwest portion of the 
+
+            house. It is very beneficial if grains and other provisions are stored in the 
+
+            Northwest store. All heavy things should be kept in the Southwest of the 
+
+            storeroom. Garbage may be collected in the Southern part of the house.      
+
+            In this block first time in websites we design the Vaastu with images so it 
+
+            will be useful for everyone to get some  awareness .if you want any front 
+
+            elevation structures u can take an appointment of our engineering as 
+
+            mention in our site.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="matrimony" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Matrimony</h4>
+        </div>
+        <div class="modal-body">
+          <p>This is the first time we are introducing a free matrimony , which will be 
+
+            useful to all categories. In this site you need to enter your details, after that 
+
+            you can search your life partner matching  free of cost .After matching then 
+
+            you need to choose second option for astrologer to check the deep steps of 
+
+            the life signs and then you need to move for third option to contact the 
+
+            particular status for address, upto the above option u have free choice, to 
+
+            get address of your matching partner you need to become a life member in 
+
+            our website.If once you become a life member in our website you will get 
+
+            contact numbers and addresses . you have a pandit option also to book a 
+
+            near by  pandit from our site if you are interested.once the wedding card was 
+
+            printed we will post the free ad of your wedding card in our site from admin. 
+
+            Here the couple need to pay 1% amount to our institute through pay role 
+
+            option from our site.  If suppose  they fail to pay !%percent amount after 
+
+            marriage the customer page will be  blocked and the customers references 
+
+            of the particular pages will be cancelled with all promo codes. So they are 
+
+            not eligible for next process in our site.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="mantras" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Mantras</h4>
+        </div>
+        <div class="modal-body">            
+
+          <p>This block is free for both logins, in this block we arranged the mantra in weekly wise exercises and also with audio , video file you can watch inside. For job problem, Santana problem ,marriage problems so successful  mantras with tested we are providing in this site.</p>
+          <p>Specially for students to score more marks we are proving the sarada  mantram and process we kept in this block .so more interesting things in this block will attract you more.</p>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="remedies" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Remedies</h4>
+        </div>
+        <div class="modal-body">
+          <p>In this block we are providing free options which the both signups can utilize .First time in website the remedies block design to fulfil the  customer need.In this specially we design the gomatha remedies which will attract the customer more and also for nay problem u can check the remedy and if u implement with trust u can see the result very soon. we refer so many books to prepare this block so I hope this block will reach your levels and fulfil your need.    In this remedy block you can also know about ur favourate stone which will protect you health and wealth.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="pandit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Pandit</h4>
+        </div>
+        <div class="modal-body">
+          <p>FOR THE FIRST TIME WE ARE GIVING A NICE OPPERTUNITY FOR PANDITS THOSE WHO ARE HAPPEN TO BE A PART IN OUR SITE.</p>
+
+          <p>THE PANDITS ARE GOING TO BE DIVIDED INTO 3 CATEGORIES IN THESE CATEGORIES THE FIRST ONE BELONGS TO VEDAM CERTIFIED BRAHMINS WHO WILL ONLY DO HOMAM, MARRIAGES,ETC..</p>
+
+          <p>SECOND CATEGORY PEOPLE  ARE BELONGS TO ASTROLOGER, VASTU,PALM.NUMEROLOGY ETC </p>
+
+          <p>THIRD RUNNING CATEGORY PEOPLE ARE TO BOTH CATEGORIES.</p>
+
+          <p>ACCORDING TO THE CUSTOMER CHOICE THE PANDIT WILL BOOK FROM DIFFERENT DISTRICT , STATE        WISE FOR THE ABOVE SCHEDULE.</p>
+
+          <p>          FOR PANDIT IF HE JOIN AS A LIFE MEMBER HE NEED TO PAY THE YEARLY CHARGES TO OUR SITE.</p>
+
+          <p>IF CUSTOMER BOOK ANY PANDIT FROM OUR SITE FOR ANY EVENT YOU NEED NOT TO PAY ANYTHING         TO US.YOU NEED TO NEGOTIATE DIRECTLY TO CUSTOMER,FOR PAYMENT.</p>
+
+          <p>ONCE YOU ARE CONDUCTING ANY EVENT YOU NEED TO TIE A COMPANY BANNER AT THAT EVENT PLACE        AND YOU NEED TO SEND A PHOTO CLIP  TO OUR MAIL ID .REMEDYVANS@gmail.com . SO THAT THE  EVENT PHOTO WILL BE PLACED IN YOUR PAGE FOR FREE AD.</p>
+
+          <p>I HOPE THE PANDITS WILL UTILISE THIS OFFER FROM OUR SITE.PROMOCODE  WILL BE GENERATED TO THE PANDIT WHO WILL BECOME THE MEMBER IN OUR SITE.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>        
+        </div>
+      </div>
+    </div>
+  </div>

@@ -296,7 +296,7 @@ of those sections to manage the look and feel of the site. */
     height: inherit;
     border-radius: 50%;
     overflow: hidden;
-    background: #c9512e url(/assets/yellow-bg.jpg);
+    background: green;
     box-shadow: inset 0 0 0 5px rgba(0,0,0,0.05);
 }
 

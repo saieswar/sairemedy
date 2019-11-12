@@ -69,7 +69,11 @@
       </ul>
     </div>
     <div class="col-sm-6 " style="padding-top: 30px;">
-      <div class="jumbotron appointment">
+      <%= image_tag "wheel.png", size: '350x350', class: "img-responsive", id: "img-rotate",style: "margin: 0px auto 0 auto; display: block;" %>
+
+      <%= image_tag "lingam.png",size: '200x200', class: "img-responsive img-circle", style: "top:200px; left: 200px;",style: "position:relative; display: block; margin: -250px auto 0 auto;" %>
+
+      <div class="jumbotron appointment" style="margin-top: 65px;">
         <h3>Appointment Form</h3>
         <%= form_tag '/create_appointments', method: :post do %>
         <div class="form-group">

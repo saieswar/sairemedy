@@ -53,6 +53,9 @@ gem 'delayed_job_active_record'
 gem 'puma'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+
+gem "font-awesome-rails"
+
  #gem 'sunspot_rails'
   group :development do
 #    gem 'sunspot_solr'

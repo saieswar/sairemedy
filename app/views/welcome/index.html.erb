@@ -1,4 +1,7 @@
 <div class="red-bg">
+
+
+
   <div class="row">
     <div class="col-sm-3">
       <ul class="ch-grid">
@@ -135,6 +138,9 @@
         <% end %>
       </div> 
 
+      <p>
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=1800x300&markers=size:small%7Ccolor:red%7C18.2883722,83.8959202&key=AIzaSyCKniNe9ZVxg-y5h1pmDD7TILlv0tSEY_Y", alt: "Map" %>
+      </p>
       <section id="about" class="about-section row">  
         <div class="col-sm-12">         
           <h1 class="page-header">About us</h1>        
@@ -160,8 +166,10 @@
               Near Kinnera Theatre <br>
               Srikakulam<br>
               Phone: 7382118129, 9676038528, 7013170502<br>
-              Andhra Pradesh - 532001<br><br>
+              Andhra Pradesh - 532001<br>
+              <p><a href="https://www.google.com/maps/place/Sri+Sai+Lahari+Numerology+%26+Astrology+Center/@18.2883722,83.8959202,15z/data=!4m5!3m4!1s0x0:0x97ce55f536de718d!8m2!3d18.2883722!4d83.8959202" target="_blank"><i class="fa fa-3x fa-map-marker"></i></a> <a href="https://www.google.com/maps/place/Sri+Sai+Lahari+Numerology+%26+Astrology+Center/@18.2883722,83.8959202,15z/data=!4m5!3m4!1s0x0:0x97ce55f536de718d!8m2!3d18.2883722!4d83.8959202" target="_blank"><i class="fa fa-3x fa-facebook-square"></i></a> <a href="https://www.google.com/maps/place/Sri+Sai+Lahari+Numerology+%26+Astrology+Center/@18.2883722,83.8959202,15z/data=!4m5!3m4!1s0x0:0x97ce55f536de718d!8m2!3d18.2883722!4d83.8959202" target="_blank"><i class="fa fa-3x fa-youtube-square"></i></a></p>
 
+              <br><br>
               <!-- <strong>Email: </strong> example@gmail.com<br>
               <strong>Phone: </strong> 9988xxxxxx -->
             </address>
@@ -524,4 +532,17 @@
       </div><!--/myCarousel-->
     </div>
   </div>
+  <br>
+  <p>
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=1500x300&markers=size:small%7Ccolor:red%7C17.8046123,83.3468775&key=AIzaSyCKniNe9ZVxg-y5h1pmDD7TILlv0tSEY_Y", alt: "Map" %>
+  </p>
 </div>
+
+
+<script type="text/javascript">
+   $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 2000
+    })
+  });  
+</script>

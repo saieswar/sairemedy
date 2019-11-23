@@ -193,6 +193,48 @@
             </div>
           </div>
           <% end if current_user.role == User::TYPE_PANDIT %>
+
+          <% if current_user.role == User::TYPE_ADMIN%>
+            <% @appointments.each_with_index do |appointment, index|%>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="appointment<%= index %>">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#inbox-collapse<%= index%>" aria-expanded="true" aria-controls="inbox-collapse<%= index%>">
+                      <strong>From:</strong> <%= "#{appointment.name} #{appointment.surname}"%>
+                    </a>
+                  </h4>
+                </div>
+                <div id="inbox-collapse<%= index%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="appointment<%= index %>">
+                  <div class="panel-body">
+                    <div class="col-sm-6">
+                      <strong>Email : </strong><%= appointment.email%>
+                    </div>
+                    <div class="col-sm-6">
+                      <strong>Phone : </strong><%= appointment.phone %>
+                    </div>
+                    <div class="col-sm-6">
+                      <strong>Date of Birth : </strong><%=appointment.date_of_birth %>
+                    </div>
+                    <div class="col-sm-6">
+                      <strong>Time of Birth : </strong><%=appointment.time_of_birth.strftime("%H:%M:%S") rescue nil %>
+                    </div>
+                    <div class="col-sm-6">
+                      <strong>Place of Birth: </strong><%= appointment.place_of_birth%>
+                    </div>
+                    <div class="col-sm-6">
+                      <strong>Pay Amount : </strong><%= appointment.pay_amount%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Address : </strong><%= appointment.address%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Cause for Appointment : </strong><%= appointment.reason%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <div role="tabpanel" class="tab-pane" id="outbox">

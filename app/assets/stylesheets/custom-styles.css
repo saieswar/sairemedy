@@ -209,3 +209,13 @@ img.img-circle.img-responsive.img-center {
 .well{
 	margin-bottom: 0;
 }
+
+.appointment h3{
+	font-weight: bold;
+}
+
+
+.rashi{
+	max-height: 93px;
+  margin-left: 54px;
+}

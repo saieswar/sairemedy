@@ -18,3 +18,6 @@
 !/log/.keep
 /tmp
 /solr/*
+
+#Ignore database.yml file
+/config/databse.yml

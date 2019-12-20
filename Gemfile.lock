@@ -83,6 +83,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.6.0)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gmail (0.6.0)
@@ -120,12 +122,11 @@ GEM
     orm_adapter (0.5.0)
     owlcarousel-rails (1.1.3.3)
       jquery-rails
-    pg (0.21.0)
     progress_bar (1.0.5)
       highline (~> 1.6)
       options (~> 2.3.0)
     puma (2.16.0)
-    rack (1.6.4)
+    rack (1.6.12)
     rack-protection (1.5.5)
       rack
     rack-test (0.6.3)
@@ -232,6 +233,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   delayed_job_active_record
   devise
+  font-awesome-rails
   gmail
   jbuilder (~> 2.0)
   jquery-rails
@@ -239,7 +241,6 @@ DEPENDENCIES
   mini_magick
   mysql2 (~> 0.3.18)
   owlcarousel-rails
-  pg (~> 0.18)
   progress_bar
   puma
   rails (= 4.2.4)

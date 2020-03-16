@@ -1,4 +1,4 @@
-
+<% if @current_user.role == "Admin"%>
 <%= link_to new_product_path, class: "btn btn-circle btn-success btn-lg pull-right" do %>
 <i class="fa fa-plus"></i>
 <%end%>
@@ -38,6 +38,208 @@
       <% end %>
     </tbody>
   </table>
+<% else %>
+  <div class="wrapper">
+    <nav id="sidebar">
+      <ul class="list-unstyled">
+        <li id="stones">
+          <a href="#">Stones</a>
+        </li>
+        <li id="kanakanam">
+          <a href="#">Kanakanam</a>
+        </li>
+        <li id="rudraksha">
+          <a href="#">Rudraksha</a>
+        </li>
+        <li id="fengshui">
+          <a href="#">Fengshui</a>
+        </li>
+        <li id="tantra">
+          <a href="#">Tantra</a>
+        </li>
+        <li id="gems">
+          <a href="#">Gems</a>
+        </li>
+        <li id="malas">
+          <a href="#">Malas</a>
+        </li>
+        <li id="others">
+          <a href="#">Others</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="products"></div>
+  </div>
+<% end %>
 
+
+<script type="text/javascript">
+  get_products = function() {
+    var Vurl = "/products"+"?type=stone";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  }
+  get_products();
+  $("#stones").on('click',function(){
+    var str = $(this).val();
+    var Vurl = "/products"+"?type=stone";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  });
+  $("#kanakanam").on('click',function(){
+    var str = $(this).val();
+    var Vurl = "/products"+"?type=kanakanam";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  });
+
+  $("#rudraksha").on('click',function(){
+    var str = $(this).val();
+    var Vurl = "/products"+"?type=rudraksha";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  });
+  $("#fengshui").on('click',function(){
+    var str = $(this).val();
+    var Vurl = "/products"+"?type=fengshui";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  });
+  $("#tantra").on('click',function(){
+    var str = $(this).val();
+    var Vurl = "/products"+"?type=tantra";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  });
+  $("#gems").on('click',function(){
+    var str = $(this).val();
+    var Vurl = "/products"+"?type=gems";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  });
+  $("#malas").on('click',function(){
+    var str = $(this).val();
+    var Vurl = "/products"+"?type=malas";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  });
+  $("#others").on('click',function(){
+    var str = $(this).val();
+    var Vurl = "/products"+"?type=others";
+    $.ajax({
+      type: "GET",
+      url: Vurl,
+      dataType: "script"
+    });
+  });
   
-  
+
+</script>
+
+<style type="text/css">
+  .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    background: #fafafa;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #2F4052;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    /*background: #6d7fcc;*/
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    /*background: #6d7fcc;*/
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    /*background: #6d7fcc;*/
+}
+#products{
+  margin:4px, 4px; 
+  padding:4px; 
+  /*background-color: green; */
+  /*width: 500px; */
+  height: 500px; 
+  overflow-x: hidden; 
+  overflow-x: auto; 
+  text-align:justify; 
+}
+</style>

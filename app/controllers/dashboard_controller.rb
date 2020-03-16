@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
 	# before_action :is_admin?
  	# layout 'admin'
   def index
-
+    @current_user = current_user
   	@references_count  = User.where(reference_no: current_user.serial_no).count
 
     @refered_users = User.where(reference_no: current_user)
@@ -16,6 +16,7 @@ class DashboardController < ApplicationController
     @appointments = Appointment.all
     #@pandits = PanditOffer.includes(:offer).where(user_id: current_user.id)
    @pandits = current_user.pandit_offers.includes(:offer).map(&:offer).select{|x| x.status == "Accepted"}.map(&:pandit_offers).flatten!
+   @carts = current_user.role == User::TYPE_ADMIN ? ProductsCart.all : @current_user.products_carts
   end
 
 

@@ -1,0 +1,19 @@
+<h2>One of our Admins will contact you</h2>
+<table class="table" >
+	<thead>
+		<tr>
+			<th>Product</th>
+			<th>Product Name</th>
+			<th>Amount</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products_carts.each do |cart|%>
+		<tr>
+			<td><%= image_tag(cart.product.image.thumb.url, size: "50x50") %></td>
+			<td><%= cart.product.name%></td>
+			<td><%= cart.amount%></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

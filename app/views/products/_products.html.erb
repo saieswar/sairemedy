@@ -1,0 +1,62 @@
+<% if @products.present? %>
+<h2 style="text-align: center;">
+	<% prod_type = @products.map(&:product_type).first rescue nil %>
+	<% if prod_type == 'Stone' %>
+	Stones
+	<% elsif prod_type == 'Kanakanam' %>
+	Kanakanams
+	<% elsif prod_type == 'Rudraksha' %>
+	Rudrakshas
+	<% elsif prod_type == 'Fengshui' %>
+	Fengshuis
+	<% elsif prod_type == 'Tantra' %>
+	Tantras
+	<% elsif prod_type == 'Gems' %>
+	Gems
+	<% elsif prod_type == 'Malas' %>
+	Malas
+	<% elsif prod_type == 'Others' %>
+	Others
+	<% end %>
+</h2>
+<% @products.each do |product| %>
+<!-- <hr class="hr_align" /> -->
+<div class="col-sm-12 product_box">
+	<div class="col-sm-12">
+		<div class="col-sm-2"><b>Description : </b></div>
+			<div class="col-sm-10">
+				<%= product.description%>
+			</div>
+		</div>
+	<div class="col-sm-12 image_txt">
+		<%= image_tag product.image_url, class: "image_style" ,size: "142x109"%>
+	</div>
+	<div class="col-sm-12">
+		<div class="col-sm-2"><b>Price : </b></div>
+		<div class="col-sm-8">	<%= "#{product.price}"%></div>
+		<div class="col-sm-2"><%= link_to 'Add to cart', add_product_to_cart_path({id: product.id}), method: :post, class: "btn btn-success add_cart"%></div>
+	</div>
+</div>
+<% end %>
+<% else %>
+<h2 style="text-align: center;">No products found</h2>
+<% end %>
+<style type="text/css">
+	.image_txt{
+		text-align: center;
+	}
+	.image_style{
+		text-align: center;
+		max-width: 100%;
+    height: auto;
+	}
+	.hr_align{
+		border: 1px solid;
+	}
+	.product_box{
+		border: 1px solid;
+	}
+	.add_cart{
+		margin-bottom: 10px;
+	}
+</style>

@@ -1,0 +1,2 @@
+module DashboardImagesHelper
+end

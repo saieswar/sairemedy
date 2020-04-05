@@ -1,0 +1,18 @@
+<%= link_to 'Add new Image ', new_dashboard_image_path, class: 'btn btn-success pull-right'%>
+<h1 class="page-header ">Listing Dashboard Images</h1>
+
+<table class="table table-striped table-hover table-condensed">
+	<th>Image</th>
+	<th>Description</th>
+	<th>Actions</th>
+		<% @dashboard_images.each do |ds| %>
+	<tr>
+			<td><%= image_tag(ds.image.thumb.url, size: "50x50") %></td>
+			<td><%= ds.description %></td>
+			<td><%= link_to ds, method: :delete, data: { confirm: 'Are you 
+          sure?' }  do%>
+          <i class="fa fa-trash-o"></i>
+          <%end%></td>
+	</tr>
+		<% end %>	
+</table>

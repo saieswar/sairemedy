@@ -350,6 +350,14 @@
     <% end %>
 
   </ul>
+  <div>
+    <% if @current_user.role == 'Admin'%>
+    <div>
+      <br>
+      <%= link_to 'Dashboard Images', dashboard_images_path, class: "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
 </div>
 </div>
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
 
   resources :casts
+  resources :dashboard_images
   resources :nakshatras
   # devise_for :users
   devise_for :users, :controllers => { registrations: 'registrations' }

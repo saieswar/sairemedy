@@ -133,11 +133,14 @@
         </div>
       </div>
       <p><a href="https://www.google.com/maps/place/Sri+Sai+Lahari+Numerology+%26+Astrology+Center/@18.2883722,83.8959202,15z/data=!4m5!3m4!1s0x0:0x97ce55f536de718d!8m2!3d18.2883722!4d83.8959202" target="_blank"><i class="fa fa-2x fa-map-marker"></i></a> <a href="https://m.facebook.com/Dr.P.V.NarayanaMurthii/?ref=bookmarks" target="_blank" class="fb-color"><i class="fa fa-2x fa-facebook-square"></i></a> <a href="https://youtu.be/5O9DtfI4BBs" target="_blank" class="youtube-color"><i class="fa fa-2x fa-youtube-square"></i></a></p>
+      <p></p>
           <div class="pull-right">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         <% end %>
       </div> 
+
+      
 
       <section id="about" class="about-section row">  
         <div class="col-sm-12">         
@@ -151,6 +154,7 @@
 
         </div>  
       </section>
+      
 
       <section id="contact" class="contact-section">
 
@@ -171,6 +175,30 @@
               <!-- <strong>Email: </strong> example@gmail.com<br>
               <strong>Phone: </strong> 9988xxxxxx -->
             </address>
+          </div>
+          <div class="col-sm-6">
+            <!-- <br><br> -->
+            <!-- <br> -->
+            <p style="margin-top: 109px;font-size: 16px">Satyavaram Pandit Speech:
+              <br>
+              <!-- Please find the below links: --><br>
+              <a href="https://youtu.be/5O9DtfI4BBs" target="_blank" ><u>Speech 1</u></a>
+              <a href="https://youtu.be/5O9DtfI4BBs" target="_blank"  class=""><u>Speech 2</u></a>
+              <a href="https://youtu.be/5O9DtfI4BBs"  target="_blank" class=""><u>Speech 3</u></a>
+            </p>
+
+            <p style="font-size: 16px">Remedies and tips in Astrology:
+              <br>
+              <a href="https://youtu.be/5O9DtfI4BBs" target="_blank" ><u>Speech 1</u></a>
+              <a href="https://youtu.be/5O9DtfI4BBs" target="_blank"  class=""><u>Speech 2</u></a>
+              <a href="https://youtu.be/5O9DtfI4BBs"  target="_blank" class=""><u>Speech 3</u></a>
+            </p>
+            <p style="font-size: 16px">Astro Vastu Exhibition:
+              <br>
+              <a href="https://youtu.be/5O9DtfI4BBs" target="_blank" ><u>Speech 1</u></a>
+              <a href="https://youtu.be/5O9DtfI4BBs" target="_blank"  class=""><u>Speech 2</u></a>
+              <a href="https://youtu.be/5O9DtfI4BBs"  target="_blank" class=""><u>Speech 3</u></a>
+            </p>
           </div>
         </div>
         
@@ -481,47 +509,18 @@
         <!-- Carousel items -->
         <div class="carousel fdi-Carousel slide" id="eventCarousel" data-interval="0">
           <div class="carousel-inner onebyone-carosel">              
-            <div class="item active">
-              <div class="col-md-4">
-                <a href="#"><%= image_tag "slide1.jpg", heigth: '250px', class: 'img-responsive center-block'%></a>                    
+            <% DashboardImage.all.each_with_index do |di, i|%>
+            <% if i == 0%>
+              <div class="item active">
+            <% else %>
+              <div class="item ">
+            <% end %>
+                <div class="col-md-4">
+                  <a href="#"><%= image_tag di.image.url, heigth: '250px', class: 'img-responsive center-block'%></a>                    
+                </div>
               </div>
-            </div>
+            <% end %>
 
-            <div class="item">
-              <div class="col-md-4">
-                <a href="#"><%= image_tag "slide2.jpg", heigth: '250px', class: 'img-responsive center-block'%></a>                    
-              </div>
-            </div>
-            <div class="item">
-              <div class="col-md-4">
-                <a href="#"><%= image_tag "slider1.jpg", heigth: '250px', class: 'img-responsive center-block'%></a>                    
-              </div>
-            </div>
-            <div class="item">
-              <div class="col-md-4">
-                <a href="#"><%= image_tag "explain.jpg", heigth: '250px', class: 'img-responsive center-block'%></a>                    
-              </div>
-            </div>
-            <div class="item">
-              <div class="col-md-4">
-                <a href="#"><%= image_tag "exhibition.jpg", heigth: '250px', class: 'img-responsive center-block'%></a>                    
-              </div>
-            </div>
-            <div class="item">
-              <div class="col-md-4">
-                <a href="#"><%= image_tag "slider2.jpg", heigth: '250px', class: 'img-responsive center-block'%></a>                    
-              </div>
-            </div>
-            <div class="item">
-              <div class="col-md-4">
-                <a href="#"><%= image_tag "image7.jpg", heigth: '250px', class: 'img-responsive center-block'%></a>                    
-              </div>
-            </div>
-            <div class="item">
-              <div class="col-md-4">
-                <a href="#"><%= image_tag "image8.jpg", heigth: '250px', class: 'img-responsive center-block'%></a>                    
-              </div>
-            </div>
           </div>
           <a class="left carousel-control" href="#eventCarousel" data-slide="prev"></a>
           <a class="right carousel-control" href="#eventCarousel" data-slide="next"></a>

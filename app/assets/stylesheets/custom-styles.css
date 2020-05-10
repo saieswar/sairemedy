@@ -34,6 +34,14 @@ body#gallexy-bg{
 	border-bottom: solid 2px #2F4052;
 	border-radius: 0px; 
 }
+
+.nav-tabs > li > a {
+	width: 176px;
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 0px 0px 0 0;
+}
 @media(min-width: 768px){
 	.navbar-white{
 		padding-top: 5px;

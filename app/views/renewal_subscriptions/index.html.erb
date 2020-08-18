@@ -1,0 +1,28 @@
+<table class="table table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Reference No</th>
+      <th>Date of Appointment</th>
+      <th>Time of Appointment</th>
+      <th>Phone</th>
+      <th>Reason</th>
+      <th>Pay</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @renewal_subscriptions.each do |rs| %>
+      <tr>
+        <td><%= rs.user.name %></td>
+        <td><%= rs.reference_no%></td>
+        <td><%= rs.date_of_appointment.strftime("%d-%b-%y") %></td>
+        <td><%= rs.time_of_appointment.strftime("%H:%M:%S")%></td>
+        <td><%= rs.phone %></td>
+        <td><%= rs.reason %></td>
+        <td><%= rs.pay %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

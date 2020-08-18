@@ -76,73 +76,16 @@
 
       <%= image_tag "lingam.png",size: '200x200', class: "img-responsive img-circle", style: "top:200px; left: 200px;",style: "position:relative; display: block; margin: -250px auto 0 auto;" %>
 
-      <div class="jumbotron appointment" style="margin-top: 65px;">
-        <h3>Appointment Form</h3>
-        <%= form_tag '/create_appointments', method: :post do %>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-sm-6">
-              <%= text_field_tag :surname, "",class: "form-control" ,placeholder: "SurName"%>
-            </div>
-            <div class="col-sm-6">                      
-              <%= text_field_tag :name, "",class: "form-control" ,placeholder: "Name"%>
-            </div>
-          </div>
-        </div>  
-        <div class="form-group">                      
-          <div class="row">
-            <div class="col-sm-6">
-              <%= date_field_tag :date_of_birth, "",class: "form-control col-sm-6" ,placeholder: "Date of Birth"%>
-            </div>
-            <div class="col-sm-6">                      
-              <%= time_field_tag :time_of_birth, "",class: "form-control col-sm-6" ,placeholder: "Time of Birth"%>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-sm-6">
-              <%= text_field_tag :place_of_birth, "",class: "form-control col-sm-6" ,placeholder: "Place of Birth"%>
-            </div>
-          
-            <div class="col-sm-6">                     
-              <%= email_field_tag :email, "",class: "form-control col-sm-6" ,placeholder: "Email"%>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="row">
-            <div class="col-sm-6">
-              <%= telephone_field_tag :phone, "",class: "form-control col-sm-6" ,placeholder: "Phone", :minlength => 10, :maxlength => 10, :size => 10, pattern: "^[0-9]*$"%>
-            </div>
+      
+    <section id="about" class="about-section row">
+        
+    <h3>Appointment Form - <a href="#" data-toggle="modal" data-target="#appointment_form">click here</a></h3>
+    <h3>Renewal Form - <a href="#" data-toggle="modal" data-target="#renewal_form">click here</a></h3>
 
-            <div class="col-sm-6">                    
-              <%= text_area_tag :address, "",class: "form-control col-sm-6" ,placeholder: "Address"%>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">                    
-          <div class="row">
-            <div class="col-sm-6">
-            <%= text_area_tag :reason, "",class: "form-control col-sm-6" ,placeholder: "Ask a question"%>
-          </div>
-          <div class="col-sm-6">                      
-            <%= text_field_tag :pay_amount, "",class: "form-control col-sm-6" ,placeholder: "Pay Amount"%>
-          </div>
-        </div>
-      </div>
-      <p><a href="https://www.google.com/maps/place/Sri+Sai+Lahari+Numerology+%26+Astrology+Center/@18.2883722,83.8959202,15z/data=!4m5!3m4!1s0x0:0x97ce55f536de718d!8m2!3d18.2883722!4d83.8959202" target="_blank"><i class="fa fa-2x fa-map-marker"></i></a> <a href="https://www.facebook.com/narayana.murtii?ref=bookmarks" target="_blank" class="fb-color"><i class="fa fa-2x fa-facebook-square"></i></a> <a href="https://youtu.be/5O9DtfI4BBs" target="_blank" class="youtube-color"><i class="fa fa-2x fa-youtube-square"></i></a> <a href="https://twitter.com/home" target="_blank" class="fb-color"><i class="fa fa-2x fa-twitter-square"></i></a></p>
-      <p></p>
-          <div class="pull-right">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        <% end %>
-      </div> 
-
+    <!-- </section>
       
 
-      <section id="about" class="about-section row">  
+      <section id="about" class="about-section row">   -->
         <div class="col-sm-12">         
           <h1 class="page-header">About us</h1>        
 
@@ -543,6 +486,235 @@
     <%#= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=1500x300&markers=size:small%7Ccolor:red%7C17.8046123,83.3468775&key=AIzaSyCKniNe9ZVxg-y5h1pmDD7TILlv0tSEY_Y", alt: "Map" %>
   </p> -->
 </div>
+
+
+<!-- Appointment form code -->
+<div class="modal fade" id="appointment_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Appointment Form</h4>
+        </div>
+        <div class="modal-body">
+          <%= form_tag '/create_appointments', method: :post do %>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12 ">
+                  <!-- <div class="col-sm-3"> -->
+                  <%#= label_tag "Councelling Type: " %>
+                  <%= label_tag :councelling_type,'Councelling Type', class: "control-label " %><br />
+                  <%= radio_button_tag :councelling_type, 'full' %>
+                  <%= label_tag :councelling_type, "Full",class: "control-label"%> &nbsp;
+                  <%= radio_button_tag :councelling_type, 'outline'%>
+                  <%= label_tag :councelling_type, "Outline",class: "control-label"%>&nbsp;
+                  <%= radio_button_tag :councelling_type, 'only_name_correction'%>
+                  <%= label_tag :councelling_type, "Only Name Correction",class: "control-label"%>&nbsp;
+                  <%= radio_button_tag :councelling_type, 'ndob'%>
+                  <%= label_tag :councelling_type, "NDOB",class: "control-label"%>&nbsp;
+                  <%= radio_button_tag :councelling_type, 'palmistry'%>
+                  <%= label_tag :councelling_type, "Palmistry",class: "control-label"%>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :surname,'SurName', class: "control-label " %><br /><%= text_field_tag :surname, "",class: "form-control" ,placeholder: "SurName"%>
+                </div>
+                <div class="col-sm-6">
+                  <%= label_tag :Name,'Name', class: "control-label " %><br />
+                  <%= text_field_tag :name, "",class: "form-control" ,placeholder: "Name"%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :date_of_appointment,'Date of Appointment', class: "control-label " %><br />
+                  <%= date_field_tag :date_of_appointment, "",class: "form-control col-sm-6" ,placeholder: "Date of Appointment"%>
+                </div>
+                <div class="col-sm-6">
+                  <%= label_tag :time_of_appointment,'Time of Appointment', class: "control-label " %><br />
+                  <%= time_field_tag :time_of_appointment, "",class: "form-control col-sm-6" ,placeholder: "Time of Appointment"%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :date_of_birth,'Date of Birth', class: "control-label " %><br />
+                  <%= date_field_tag :date_of_birth, "",class: "form-control col-sm-6" ,placeholder: "Date of Birth"%>
+                </div>
+                <div class="col-sm-6">
+                  <%= label_tag :time_of_birth,'Time of Birth', class: "control-label " %><br />
+                  <%= time_field_tag :time_of_birth, "",class: "form-control col-sm-6" ,placeholder: "Time of Birth"%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :place_of_birth,'Place of Birth', class: "control-label " %><br />
+                  <%= text_field_tag :place_of_birth, "",class: "form-control col-sm-6" ,placeholder: "Place of Birth"%>
+                </div>
+
+                <div class="col-sm-6">
+                  <%= label_tag :email,'Email', class: "control-label " %><br />
+                  <%= email_field_tag :email, "",class: "form-control col-sm-6" ,placeholder: "Email"%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :phone,'Phone', class: "control-label " %><br />
+                  <%= telephone_field_tag :phone, "",class: "form-control col-sm-6" ,placeholder: "Phone", :minlength => 10, :maxlength => 10, :size => 10, pattern: "^[0-9]*$"%>
+                </div>
+
+                <div class="col-sm-6">
+                  <%= label_tag :address,'Address', class: "control-label " %><br />
+                  <%= text_area_tag :address, "",class: "form-control col-sm-6" ,placeholder: "Address"%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :gender,'Gender', class: "control-label " %><br />
+                  <%= radio_button_tag :gender, 'Male' %>
+                  <%= label_tag :gender, "Male",class: "control-label"%> &nbsp;
+                  <%= radio_button_tag :gender, 'Female' %>
+                  <%= label_tag :gender, "Female",class: "control-label"%>
+                </div>
+                <div class="col-sm-6">
+                  <%= label_tag :aadhar,'aadhar', class: "control-label " %><br />
+                  <%= telephone_field_tag :aadhar, "",class: "form-control col-sm-6" ,placeholder: "Aadhar Number"%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :job,'Job', class: "control-label " %><br />
+                  <%= select_tag :job, options_for_select([['Select Job',''],["Private",'private'], ["Government",'government'], ["Business",'business']]), class: "form-control"%>
+                </div>
+                <div class="col-sm-6">
+                  <%= label_tag :caste,'Caste', class: "control-label " %><br />
+                  <%= text_field_tag :caste, "",class: "form-control col-sm-6" ,placeholder: "Caste"%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :religion,'Religion', class: "control-label " %><br />
+                  <%= text_field_tag :religion,'', class: "form-control", placeholder: "Religion"%>
+                </div>
+                <div class="col-sm-6">
+                  <%= label_tag :reference,'Reference', class: "control-label " %><br />
+                  <%= text_field_tag :reference, "",class: "form-control col-sm-6" ,placeholder: "Reference"%>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :marital_status,'Marital Status', class: "control-label " %><br />
+                  <%= select_tag :marital_status, options_for_select([['Select Marital Status',''],["Single",false], ["Married",true]]), class: "form-control"%>
+                </div>
+                <div class="col-sm-6">
+                  <%= label_tag :payment_type,'Payment Type', class: "control-label " %><br />
+                  <%= select_tag :payment_type, options_for_select([['Select Payment',''],["Cash",'cash'], ["Gpay","gpay"], ['PhonePay','phonepay'],['Paytm','paytm']]), class: "form-control"%>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <%= label_tag :reason,'Reason', class: "control-label " %><br />
+                  <%= text_area_tag :reason, "",class: "form-control col-sm-6" ,placeholder: "Ask a question"%>
+                </div>
+                <div class="col-sm-6">
+                  <%= label_tag :pay_amount,'Pay Amount', class: "control-label " %><br />
+                  <%= text_field_tag :pay_amount, "",class: "form-control col-sm-6" ,placeholder: "Pay Amount"%>
+                </div>
+              </div>
+            </div>
+            <p><a
+                href="https://www.google.com/maps/place/Sri+Sai+Lahari+Numerology+%26+Astrology+Center/@18.2883722,83.8959202,15z/data=!4m5!3m4!1s0x0:0x97ce55f536de718d!8m2!3d18.2883722!4d83.8959202"
+                target="_blank"><i class="fa fa-2x fa-map-marker"></i></a> <a
+                href="https://www.facebook.com/narayana.murtii?ref=bookmarks" target="_blank" class="fb-color"><i
+                  class="fa fa-2x fa-facebook-square"></i></a> <a href="https://youtu.be/5O9DtfI4BBs" target="_blank"
+                class="youtube-color"><i class="fa fa-2x fa-youtube-square"></i></a> <a href="https://twitter.com/home"
+                target="_blank" class="fb-color"><i class="fa fa-2x fa-twitter-square"></i></a></p>
+            <p></p>
+            <div class="pull-right" style="margin-top: -30px;">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            <% end %>
+        </div>
+        <!-- <div class="modal-footer"> -->
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>         -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="renewal_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Renewal Form</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag '/renew_appointments', method: :post do %>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-12">
+                <!-- <div class="col-sm-3">
+                  <%#= text_field_tag :ref_no , "#{Date.today.strftime('%y')} - FSLC -", disabled: true, class: "form-control"%>
+                </div>
+                
+                <div class="col-sm-9"> -->
+                  <%= text_field_tag :reference, "",class: "form-control" ,placeholder: "Reference"%>
+                <!-- </div> -->
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= date_field_tag :date_of_appointment, "",class: "form-control" ,placeholder: "Date"%>
+              </div>
+              <div class="col-sm-6">
+                <%= time_field_tag :time_of_appointment, "",class: "form-control" ,placeholder: "Time"%>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= telephone_field_tag :phone, "",class: "form-control" ,placeholder: "Phone"%>
+              </div>
+              <div class="col-sm-6">
+                <%= text_area_tag :reason, "",class: "form-control col-sm-6" ,placeholder: "Ask a question"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= text_field_tag :pay,'', class: "form-control", placeholder: "Amount"%>
+              </div>
+            </div>
+          </div>
+          
+          <div class="pull-right" style="margin-top: -30px;">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- appointment form end -->
 <audio controls autoplay loop id="audioplay">            
       <source src="<%= asset_path('backgroud-music.mp3') %>" type="audio/mpeg">
         Your browser does not support the audio element.

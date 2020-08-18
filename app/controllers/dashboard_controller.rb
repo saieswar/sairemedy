@@ -8,12 +8,12 @@ class DashboardController < ApplicationController
     @current_user = current_user
   	@references_count  = User.where(reference_no: current_user.serial_no).count
 
-    @refered_users = User.where(reference_no: current_user)
+    @refered_users = User.where(reference_no: current_user.serial_no)
 
     @sent_request =  PanditOffer.where(user_id: current_user.id)
 
     @offers = current_user.role == User::TYPE_PANDIT ? current_user.pandit.offers.map(&:pandit_offers).flatten : []
-    @appointments = Appointment.all
+    @appointments = Appointment.all.order('created_at DESC')
     #@pandits = PanditOffer.includes(:offer).where(user_id: current_user.id)
    @pandits = current_user.pandit_offers.includes(:offer).map(&:offer).select{|x| x.status == "Accepted"}.map(&:pandit_offers).flatten!
    @carts = current_user.role == User::TYPE_ADMIN ? ProductsCart.all : @current_user.products_carts

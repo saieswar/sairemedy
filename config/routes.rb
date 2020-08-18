@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :registrations
+  resources :renewal_subscriptions
   # resources :pandits
 
   resources :pandits do
@@ -68,6 +69,7 @@ Rails.application.routes.draw do
   match '/download_appointments_csv' => 'dashboard#download_appointments_csv',via: :get,defaults: {format: :csv}
   match '/add_product_to_cart' => 'products#add_product_to_cart', via: :post
   match '/get_cart_products' => 'products#products_carts', via: :get
+  match '/renew_appointments' => 'welcome#renew_appointments', via: :post
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

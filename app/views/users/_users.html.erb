@@ -4,10 +4,8 @@
       <th>ID</th>
       <th>Email</th>
       <th>Name</th>
-      <th>Show</th>
-      <th>Edit</th>
-      <th>Delete</th>
-      <th>pdf</th>
+      <th>Renewals</th>
+      <th>actions</th>
     </tr>
   </thead>
 
@@ -17,20 +15,15 @@
         <td><%= user.id %></td>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        
-        <td>
+        <td><%=(user.renewal_subscriptions.count > 0) ? (link_to user.renewal_subscriptions.count, renewal_subscriptions_path(user_id: user.id)) :( user.renewal_subscriptions.count )%></td>
+        <td><%= link_to 'Show', user %> &nbsp;
           <%= link_to edit_user_path(user) do %>
             <i class="fa fa-pencil-square-o"></i>
-          <%end%>
-
-        </td>
-        <td>
+          <%end%>&nbsp;
           <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' } do%>
             <i class="fa fa-trash-o"></i>
-          <%end%>
-        </td>
-        <td><%= link_to astro_upload_path(id: user.id) do%>
+          <%end%>&nbsp;
+        <%= link_to astro_upload_path(id: user.id) do%>
              <i class="fa fa-upload"></i>
           <% end %>
         </td>

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :pandit_offers
   has_many :astro_pdfs
   has_many :products_carts
+  has_many :renewal_subscriptions
   TYPE_ADMIN = "Admin"
   TYPE_PANDIT = "Pandit"
   TYPE_PAID_USER = "Paid User"

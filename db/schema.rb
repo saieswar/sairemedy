@@ -11,21 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200328062404) do
+ActiveRecord::Schema.define(version: 20200716075237) do
 
   create_table "appointments", force: :cascade do |t|
-    t.string   "email",          limit: 255
-    t.string   "name",           limit: 255
-    t.string   "phone",          limit: 255
-    t.text     "reason",         limit: 65535
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "surname",        limit: 255
+    t.string   "email",               limit: 255
+    t.string   "name",                limit: 255
+    t.string   "phone",               limit: 255
+    t.text     "reason",              limit: 65535
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "surname",             limit: 255
     t.date     "date_of_birth"
     t.time     "time_of_birth"
-    t.string   "place_of_birth", limit: 255
-    t.text     "address",        limit: 65535
-    t.string   "pay_amount",     limit: 255
+    t.string   "place_of_birth",      limit: 255
+    t.text     "address",             limit: 65535
+    t.string   "pay_amount",          limit: 255
+    t.boolean  "job"
+    t.string   "caste",               limit: 255
+    t.string   "religion",            limit: 255
+    t.boolean  "marital_status"
+    t.string   "councelling_type",    limit: 255
+    t.string   "payment_type",        limit: 255
+    t.string   "photo",               limit: 255
+    t.string   "gender",              limit: 255
+    t.string   "aadhar",              limit: 255
+    t.string   "reference",           limit: 255
+    t.date     "date_of_appointment"
+    t.time     "time_of_appointment"
   end
 
   create_table "astro_pdfs", force: :cascade do |t|
@@ -215,6 +227,18 @@ ActiveRecord::Schema.define(version: 20200328062404) do
   end
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
+
+  create_table "renewal_subscriptions", force: :cascade do |t|
+    t.integer  "user_id",             limit: 4
+    t.string   "reference_no",        limit: 255
+    t.datetime "date_of_appointment"
+    t.string   "phone",               limit: 255
+    t.text     "reason",              limit: 65535
+    t.string   "pay",                 limit: 255
+    t.time     "time_of_appointment"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "",    null: false

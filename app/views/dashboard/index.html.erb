@@ -217,6 +217,12 @@
                       <strong>Phone : </strong><%= appointment.phone %>
                     </div>
                     <div class="col-sm-6">
+                      <strong>Date of Appointment : </strong><%=appointment.date_of_appointment %>
+                    </div>
+                    <div class="col-sm-6">
+                      <strong>Time of Appointment : </strong><%=appointment.time_of_appointment.strftime("%H:%M:%S") rescue nil %>
+                    </div>
+                    <div class="col-sm-6">
                       <strong>Date of Birth : </strong><%=appointment.date_of_birth %>
                     </div>
                     <div class="col-sm-6">
@@ -230,6 +236,30 @@
                     </div>
                     <div class="col-sm-12">
                       <strong>Address : </strong><%= appointment.address%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Gender : </strong><%= appointment.gender%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Aadhar : </strong><%= appointment.aadhar%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Job : </strong><%= appointment.job%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Caste : </strong><%= appointment.caste%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Religion : </strong><%= appointment.religion%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Reference : </strong><%= appointment.reference%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Marital Status : </strong><%= appointment.marital_status%>
+                    </div>
+                    <div class="col-sm-12">
+                      <strong>Payment Type : </strong><%= appointment.payment_type%>
                     </div>
                     <div class="col-sm-12">
                       <strong>Cause for Appointment : </strong><%= appointment.reason%>
@@ -356,6 +386,62 @@
       <br>
       <%= link_to 'Dashboard Images', dashboard_images_path, class: "btn btn-primary" %>
     </div>
+    <% elsif @current_user.role == 'Paid User'%>
+      <h3><a href="#" data-toggle="modal" data-target="#renewal_form" >Renew Membership</a></h3>
+      <div class="modal fade" id="renewal_form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Renew Membership</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag '/renew_appointments', method: :post do %>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-12">
+                <!-- <div class="col-sm-3">
+                  <%#= text_field_tag :ref_no , "#{Date.today.strftime('%y')} - FSLC -", disabled: true, class: "form-control"%>
+                </div>
+                
+                <div class="col-sm-9"> -->
+                  <%= hidden_field_tag :reference, @current_user.reference_no,class: "form-control" ,placeholder: "Reference"%>
+                  <%= hidden_field_tag :id, @current_user.id,class: "form-control" ,placeholder: "id"%>
+                <!-- </div> -->
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= date_field_tag :date_of_appointment, "",class: "form-control" ,placeholder: "Date"%>
+              </div>
+              <div class="col-sm-6">
+                <%= time_field_tag :time_of_appointment, "",class: "form-control" ,placeholder: "Time"%>
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= telephone_field_tag :phone, "",class: "form-control" ,placeholder: "Phone"%>
+              </div>
+              <div class="col-sm-6">
+                <%= text_area_tag :reason, "",class: "form-control col-sm-6" ,placeholder: "Ask a question"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= text_field_tag :pay,'', class: "form-control", placeholder: "Amount"%>
+              </div>
+            </div>
+          </div>
+          
+          <div class="pull-right" style="margin-top: -30px;">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
     <% end %>
   </div>
 </div>

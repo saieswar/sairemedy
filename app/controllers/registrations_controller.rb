@@ -44,11 +44,11 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def sign_up_params
-    params.require(:user).permit(:name, :email,  :password, :password_confirmation, :aadhar_card, :phone, :reference, :address, :avatar,:gender, :serial_no, :dob, :role, :is_paid, :pandit_attributes => [:deals, :door_no, :street, :city, :state, :zip_code, :working_as, :experience, :address, :district]);
+    params.require(:user).permit(:name, :email,  :password, :password_confirmation, :aadhar_card, :phone, :reference_no, :address, :avatar,:gender, :serial_no, :dob, :role, :is_paid, :pandit_attributes => [:deals, :door_no, :street, :city, :state, :zip_code, :working_as, :experience, :address, :district]);
   end
 
   def account_update_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :name, :aadhar_card, :phone, :reference, :address, :avatar,:gender, :serial_no, :dob, :role, :pandit_attributes => [:deals, :door_no, :street, :city, :state, :zip_code, :working_as, :experience, :address, :district]);
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :name, :aadhar_card, :phone, :reference_no, :address, :avatar,:gender, :serial_no, :dob, :role, :pandit_attributes => [:deals, :door_no, :street, :city, :state, :zip_code, :working_as, :experience, :address, :district]);
   end
 
 end
